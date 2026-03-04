@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erick | Estudante de Sistemas de Informação</title>
+  <link rel="website icon" type="png" href="imagem/WhatsApp Image 2025-10-04 at 13.35.24.jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset e configurações gerais */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #2563eb;
+      --accent: #00d4ff;
+      --bg-1: #071129;
+      --bg-2: #0f1724;
+      --dark: #0d1a3a;
+      --dark-light: #111827;
+      --gray: #94a3b8;
+      --light: #eceef0;
+      --glass: rgba(255,255,255,0.04);
+      --transition-fast: 200ms;
+      --transition: all 0.35s cubic-bezier(.2,.9,.2,1);
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 60%);
+      color: var(--light);
+      line-height: 1.5;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Animated gradient backdrop for a modern feel */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background: radial-gradient(600px 400px at 10% 20%, rgba(37,99,235,0.12), transparent 20%), radial-gradient(600px 400px at 90% 80%, rgba(0,212,255,0.06), transparent 20%);
+      animation: bgShift 14s linear infinite;
+      pointer-events: none;
+    }
+
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+    section { padding: 90px 0; }
+
+    h1,h2,h3,h4 { font-weight:700; line-height:1.15; margin-bottom:1rem; }
+    h1 { font-size: clamp(2rem,4vw,3.5rem); }
+    h2 { font-size: clamp(1.6rem,3vw,2.5rem); text-align:center; color:#bebebe; }
+
+    /* Reveal utilities (IntersectionObserver will add .active) */
+    .reveal { opacity:0; transform:translateY(20px); transition: opacity 600ms ease, transform 600ms ease; will-change: opacity, transform; }
+    .reveal.active { opacity:1; transform:translateY(0); }
+
+    p { margin-bottom:1rem; font-size:1rem; color:#bebebe; }
+
+    /* Buttons with ripple fallback */
+    .btn { display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1.4rem; background:var(--primary); color:#fff; border-radius:10px; border:none; cursor:pointer; font-weight:600; box-shadow: 0 6px 20px rgba(37,99,235,0.18); position:relative; overflow:hidden; transition:var(--transition); }
+    .btn:focus { outline:3px solid rgba(37,99,235,0.18); }
+    .btn:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(37,99,235,0.22); }
+    .btn-outline { background:transparent; border:2px solid rgba(255,255,255,0.06); color:var(--light); }
+
+    /* accessible focus state */
+    :focus-visible { outline: 3px solid rgba(255,255,255,0.06); outline-offset: 2px; }
+
+    /* Header */
+    header { position: fixed; inset: 0 0 auto 0; z-index: 1000; transition: var(--transition); padding: 18px 0; background: rgba(6,10,20,0.6); backdrop-filter: blur(8px); }
+    header.scrolled { box-shadow: 0 8px 30px rgba(0,0,0,0.35); padding: 10px 0; }
+    .navbar { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .logo { font-size:1.1rem; font-weight:800; color:var(--primary); display:flex; align-items:center; gap:10px; }
+    .nav-links { display:flex; gap:24px; }
+    .nav-links a { color:var(--light); text-decoration:none; font-weight:500; position:relative; padding:6px 2px; }
+    .nav-links a::after { content:''; position:absolute; left:0; bottom:-4px; height:3px; width:0; background:linear-gradient(90deg,var(--accent),var(--primary)); transition:width 280ms ease; }
+    .nav-links a:hover::after { width:100%; }
+
+    .mobile-menu-btn { display:none; background:none; border:0; color:var(--light); font-size:1.25rem; cursor:pointer; }
+    .theme-toggle { background:transparent; border:0; color:var(--light); cursor:pointer; font-size:1.1rem; margin-right:8px; }
+
+    .mobile-menu { display:flex; flex-direction:column; position:fixed; top:0; right:-100%; width:280px; height:100vh; background: linear-gradient(180deg, rgba(10,14,24,0.98), rgba(20,26,38,0.98)); padding:100px 18px 20px; gap:14px; transition:right 320ms cubic-bezier(.2,.9,.2,1); }
+    .mobile-menu.active { right:0; }
+
+    /* Hero */
+    .hero { min-height:100vh; display:flex; align-items:center; position:relative; overflow:hidden; padding-top:100px; }
+    .hero::before { content:''; position:absolute; right:-10%; top:-20%; width:700px; height:700px; border-radius:50%; background: radial-gradient(circle at 30% 30%, rgba(37,99,235,0.12), transparent 30%); z-index:-1; filter: blur(30px); transform: translateZ(0); }
+    .hero-content { display:flex; gap:40px; align-items:center; justify-content:space-between; width:100%; }
+    .hero-text { max-width:640px; }
+    .intro { color:var(--gray); font-size:1.05rem; margin-bottom:8px; }
+    .highlight { color:var(--primary); font-weight:800; }
+
+    /* Typed effect */
+    .typed { color:var(--accent); font-weight:800; }
+    .cursor { display:inline-block; margin-left:6px; color:var(--accent); animation: blink 1s steps(2, start) infinite; }
+
+    .description { color:#cbd5e1; margin:20px 0 18px; line-height:1.7; }
+
+    .hero-image img { width:360px; height:360px; object-fit:cover; border-radius:18px; box-shadow: 0 30px 60px rgba(3,6,23,0.6); border:4px solid rgba(255,255,255,0.04); transition: transform 450ms ease, box-shadow 450ms ease; }
+    .hero-image img:hover { transform: translateY(-6px) scale(1.02) rotate(1deg); box-shadow: 0 40px 80px rgba(37,99,235,0.14); }
+
+    .divider { height:1px; background:linear-gradient(90deg, transparent, rgba(37,99,235,0.25), transparent); margin:30px 0; }
+
+    /* Tags horizontal scroller */
+    .tag-list { overflow:hidden; }
+    .inner { display:flex; gap:0.8rem; width:max-content; animation: scroll 50s linear infinite; }
+
+    .tag { background: rgba(255,255,255,0.03); padding:.6rem .9rem; border-radius:8px; display:inline-flex; gap:.6rem; align-items:center; color:#dbe8ff; font-weight:600; }
+
+    /* Portfolio */
+    .portfolio-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap:28px; margin-top:36px; }
+    .portfolio-item { border-radius:12px; overflow:hidden; background: linear-gradient(180deg, rgba(0, 0, 0, 0.219), rgba(255,255,255,0.01)); transition: transform 360ms ease, box-shadow 360ms ease; box-shadow: 0 10px 30px rgba(2,6,23,0.6); }
+    .portfolio-item:hover { transform: translateY(-14px); box-shadow: 0 40px 90px rgba(37,99,235,0.14); }
+    .portfolio-img img { width:100%; height:220px; object-fit:cover; transition: transform 560ms cubic-bezier(.2,.9,.2,1); }
+    .portfolio-item:hover .portfolio-img img { transform: scale(1.12) rotate(1deg); }
+
+    /* Contact / form */
+    .contact { background: transparent; }
+    .contact-content { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+    .contact-form { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:26px; border-radius:12px; box-shadow: 0 20px 50px rgba(2,6,23,0.6); }
+    .form-control { width:100%; padding:12px 14px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.04); border-radius:8px; color:var(--light); }
+    .form-control:focus { box-shadow: 0 6px 18px rgba(37,99,235,0.12); border-color:var(--primary); outline:none; transform: translateY(-2px); }
+
+    /* Footer */
+    footer { padding:40px 0; background:transparent; }
+
+    /* Small helpers and animations */
+    @keyframes bgShift { 0%{transform:translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateY(0)} }
+    @keyframes blink { 50% { opacity: 0 } }
+    @keyframes scroll { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
+
+    @media (max-width: 992px) {
+      .hero-content { flex-direction:column-reverse; text-align:center; gap:30px; }
+      .nav-links { display:none; }
+      .mobile-menu-btn { display:inline-block; }
+      .mobile-menu { display:flex; }
+      .contact-content, .about-content { grid-template-columns:1fr; }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size:2rem; }
+      .hero-image img { width:280px; height:280px; }
+      .portfolio-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero-image img { width:230px; height:230px; }
+      .btn { width:100%; justify-content:center; }
+    }
+
+    /* Skip link */
+    .skip-link { position: absolute; left: -9999px; top: 8px; background: var(--primary); color: rgba(8, 62, 163, 0.699); padding: 8px 12px; border-radius: 6px; z-index: 2000; }
+    .skip-link:focus { left: 16px; top: 12px; }
+
+    /* Light theme variables (kept non-white to preserve previous background look) */
+    :root[data-theme="light"] {
+      --primary: #0f62fe;
+      --accent: #00d4ff;
+      --bg-1: #071129; /* preserve original deep gradient colors */
+      --bg-2: #0f1724;
+      --dark: #0d1a3a;
+      --dark-light: #111827;
+      --gray: #94a3b8;
+      --light: #eceef0;
+    }
+
+    /* Toast container */
+    .toast-container { position: fixed; right: 20px; bottom: 20px; display:flex; flex-direction:column; gap:10px; z-index:1200; }
+    .toast { padding: 12px 18px; border-radius:10px; color:#fff; box-shadow: 0 8px 30px rgba(2,6,23,0.4); min-width:180px; }
+
+    /* Modal styles */
+    .modal { position: fixed; inset: 0; display:none; align-items:center; justify-content:center; z-index:1500; }
+    .modal[aria-hidden="false"] { display:flex; }
+    .modal-backdrop { position:absolute; inset:0; background: rgba(2,6,23,0.6); }
+    .modal-dialog { position:relative; background: linear-gradient(180deg, rgb(0, 0, 0), rgb(1, 39, 110)); border-radius:12px; width: min(880px, 96%); max-height: 90vh; overflow:auto; display:flex; gap:20px; padding:18px; box-shadow: 0 30px 80px rgba(10, 55, 255, 0.493); transform: translateY(18px) scale(0.98); opacity: 0; transition: transform 320ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease; }
+    /* Modal open state animation */
+    .modal[aria-hidden="false"] .modal-dialog { transform: translateY(0) scale(1); opacity: 1; }
+    /* Subtle pop animation for focusable content */
+    @keyframes modalPop {
+      0% { transform: translateY(12px) scale(0.98); opacity: 0; }
+      60% { transform: translateY(-6px) scale(1.02); opacity: 1; }
+      100% { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    .modal[aria-hidden="false"] .modal-dialog { animation: modalPop 360ms cubic-bezier(.2,.9,.2,1); }
+    .modal-media img { width:320px; height:220px; object-fit:cover; border-radius:8px; }
+    .modal-body { color:var(--light); }
+    .modal-close { position:absolute; right:12px; top:8px; background:transparent; color:var(--light); border:0; font-size:28px; cursor:pointer; }
+    body.modal-open { overflow: hidden; }
+
+    .detail-item h4 {
+      color: #ffffff;
+      margin-bottom: 5px;
+    }
+
+    .detail-item p, .detail-item li {
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .detail-item ul {
+      margin-left: 25px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .detail-item li {
+      margin-bottom: 8px;
+    }
+
+    /* Animação de rolagem contínua */
+    .tag-list {
+      width: 100%;
+      font-family: "Montserrat", sans-serif;
+      position: relative;
+      overflow: hidden;
+      margin-top: 30px;
+    }
+
+    .inner {
+      display: flex;
+      gap: 1rem;
+      width: max-content;
+      animation: scroll 60s linear infinite;
+      will-change: transform;
+    }
+
+    .tag {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      background-color: rgba(37, 100, 235, 0.253);
+      padding: 0.7rem 1rem;
+      border-radius: 0.4rem;
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tag::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(37, 123, 235, 0.349), transparent);
+      transition: left 0.5s;
+    }
+
+    .tag:hover::before {
+      left: 100%;
+    }
+
+    .tag:hover {
+      transform: scale(1.1) translateY(-5px);
+      background-color: var(--primary);
+      box-shadow: 0 0.2rem 0.4rem #0000005d,
+                  0 0.2rem 0.8rem #0000005d,
+                  0 0.4rem 2rem rgba(37, 99, 235, 0.5);
+    }
+
+    .tag i {
+      font-size: 1.1rem;
+    }
+
+    .fa-html5 { color: #e34c26; }
+    .fa-css3-alt { color: #264de4; }
+    .fa-js { color: #f0db4f; }
+    .fa-react { color: #61dbfb; }
+    .fa-code { color: #0070f3; }
+    .fa-c { color: #00599c; }
+    .fa-git-alt { color: #f1502f; }
+    .fa-github { color: #ffffff; }
+    .fa-cloud { color: #00c7b7; }
+    .fa-server { color: #000000; }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Portfólio Section */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .portfolio-item {
+      background: var(--dark-light);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: 0 10px 20px rgba(36, 107, 214, 0.219);
+      animation: bounceIn 0.6s ease;
+      animation-fill-mode: both;
+    }
+
+    .portfolio-item:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .portfolio-item:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .portfolio-item:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 20px 40px rgb(30, 84, 202);
+    }
+
+    .portfolio-img {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .portfolio-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+      filter: brightness(0.9);
+    }
+
+    .portfolio-item:hover .portfolio-img img {
+      transform: scale(1.15) rotate(2deg);
+      filter: brightness(1.1);
+    }
+
+    .portfolio-info {
+      padding: 20px;
+    }
+
+    .portfolio-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .portfolio-subtitle {
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .portfolio-info p {
+      color: #cbd5e1;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .portfolio-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .portfolio-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: var(--transition);
+    }
+
+    .portfolio-links a:hover {
+      color: var(--light);
+    }
+
+    /* Contato Section */
+    .contact {
+      background-color: var(--dark-light);
+    }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-info h3 {
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .contact-info > p {
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: var(--transition);
+      margin-bottom: 20px;
+      animation: fadeInUp 0.6s ease backwards;
+    }
+
+    .contact-item:nth-child(1) { animation-delay: 0.1s; }
+    .contact-item:nth-child(2) { animation-delay: 0.2s; }
+    .contact-item:nth-child(3) { animation-delay: 0.3s; }
+    .contact-item:nth-child(4) { animation-delay: 0.4s; }
+
+    .contact-item:hover {
+      transform: translateX(10px);
+    }
+
+    .contact-item i {
+      width: 50px;
+      height: 50px;
+      background: rgba(37, 99, 235, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .contact-item:hover i {
+      background: var(--primary);
+      color: white;
+      transform: rotate(360deg) scale(1.1);
+    }
+
+    .contact-text h4 {
+      margin-bottom: 5px;
+      color: #ffffff;
+    }
+
+    .contact-text p {
+      color: #cbd5e1;
+      margin-bottom: 0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      width: 45px;
+      height: 45px;
+      background: rgba(37, 90, 235, 0.082);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.2rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-links a::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: var(--primary);
+      transition: width 0.4s, height 0.4s, top 0.4s, left 0.4s;
+      z-index: -1;
+    }
+
+    .social-links a:hover::before {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .social-links a:hover {
+      color: white;
+      transform: translateY(-5px) rotate(360deg);
+    }
+
+    .contact-form {
+      background: var(--dark);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      background: var(--dark-light);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: var(--light);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+      transform: translateY(-2px);
+    }
+
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark-light);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      margin: 15px 0;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .copyright {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* Animações Avançadas */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 25px 50px rgba(37, 99, 235, 0.5);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      70% {
+        transform: scale(0.9);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes textGlow {
+      0%, 100% {
+        text-shadow: 0 0 10px rgba(37, 99, 235, 0.5),
+                     0 0 20px rgba(37, 99, 235, 0.3);
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(37, 99, 235, 0.8),
+                     0 0 30px rgba(37, 99, 235, 0.5),
+                     0 0 40px rgba(37, 99, 235, 0.3);
+      }
+    }
+
+    /* Responsividade */
+    @media (max-width: 992px) {
+      .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+      }
+      
+      .hero-text {
+        max-width: 100%;
+      }
+
+      .about-content, .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .mobile-menu {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .hero-image img {
+        width: 280px;
+        height: 280px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .contact-form {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-image img {
+        width: 250px;
+        height: 250px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .portfolio-grid {
+        gap: 20px;
+      }
+
+      .btn {
+        padding: 12px 24px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <!-- Navbar -->
+  <header id="header">
+    <nav class="navbar container">
+      <div class="logo">
+        <i class="fas fa-code"></i> Erick
+      </div>
+      <div class="nav-links">
+        <a href="#home">Início</a>
+        <a href="#about">Sobre</a>
+        <a href="#portfolio">Projetos</a>
+        <a href="#contact">Contato</a>
+      </div>
+      
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">Início</a>
+        <a href="#about">Sobre</a>
+        <a href="#portfolio">Projetos</a>
+        <a href="#contact">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" role="main" tabindex="-1">
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="intro">Olá, eu sou <span class="highlight">Erick</span> 👋</p>
+          <h1 class="reveal">Estudante de <span id="typed" class="typed">Sistemas de Informação</span><span class="cursor">|</span></h1>
+          <p class="description">
+            Foco em projetos e integração. Estudante de Sistemas de Informação, busco transformar ideias em soluções digitais práticas. 
+            Trabalho com HTML, CSS e JavaScript, explorando também áreas como modelagem de sistemas, banco de dados e integração de tecnologias. 
+            Meu objetivo é criar projetos funcionais, com design intuitivo e aplicabilidade real.
+          </p>
+          <div class="divider"></div>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn">Entre em Contato</a>
+            <a href="#portfolio" class="btn btn-outline">Ver Projetos</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="imagem/WhatsApp Image 2025-10-04 at 13.35.24.jpeg" alt="Foto de Erick">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>Sobre Mim</h2>
+      <div class="contact"></div>
+        <div class="about-text">
+          <h3><p class="intro"><span class="highlight">Erick Aparecido Brites Lopes</span></p></h3>
+          <p>Estudante de Sistemas de Informação com foco em desenvolvimento web e programação. Experiência prática em HTML, CSS, JavaScript, React, Next.js e C, adquirida em projetos acadêmicos e pessoais, como criação de sites e jogos.
+          <p>Perfil proativo, organizado e focado em aprendizado contínuo, buscando oportunidades para aplicar conhecimentos, contribuir com soluções digitais e crescer profissionalmente em um ambiente desafiador.</p>
+          <div class="about-text">
+            <div class="detail-item">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <p class="intro"><span class="highlight">Educação</span> </p>
+                <p>Bacharelado em Sistemas de Informação (Início: Março 2025)</p>
+              </div>
+            </div>
+            
+            <div class="detail-item">
+              <i class="fas fa-briefcase"></i>
+              <div>
+                <p class="intro"><span class="highlight">Experiência</span></p>
+                <p>Desenvolvedor Web (Março 2025 – Presente) - Projetos Pessoais / Universidade</p>
+                <ul>
+                  <li>Criação de softwares e sites aplicando boas práticas de desenvolvimento</li>
+                  <li>Revisão e otimização de códigos para melhorar desempenho</li>
+                  <li>Integração de sistemas para troca eficiente de informações</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <h3> <p class="intro"><span class="highlight">Habilidades Técnicas</span></p></h3>
+          <div class="tag-list">
+            <div class="inner">
+              <span class="tag"><i class="fab fa-html5"></i> HTML</span>
+              <span class="tag"><i class="fab fa-css3-alt"></i> CSS</span>
+              <span class="tag"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="tag"><i class="fab fa-react"></i> React</span>
+              <span class="tag"><i class="fas fa-code"></i> Next.js</span>
+              <span class="tag"><i class="fas fa-c"></i> Linguagem C</span>
+              <span class="tag"><i class="fas fa-code"></i> VS Code</span>
+              <span class="tag"><i class="fab fa-git-alt"></i> Git</span>
+              <span class="tag"><i class="fab fa-github"></i> GitHub</span>
+              <span class="tag"><i class="fas fa-cloud"></i> Netlify</span>
+              <span class="tag"><i class="fas fa-server"></i> Vercel</span>
+              <span class="tag"><i class="fab fa-html5"></i> HTML</span>
+              <span class="tag"><i class="fab fa-css3-alt"></i> CSS</span>
+              <span class="tag"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="tag"><i class="fab fa-react"></i> React</span>
+              <span class="tag"><i class="fas fa-code"></i> Next.js</span>
+              <span class="tag"><i class="fas fa-c"></i> Linguagem C</span>
+              <span class="tag"><i class="fas fa-code"></i> VS Code</span>
+              <span class="tag"><i class="fab fa-git-alt"></i> Git</span>
+              <span class="tag"><i class="fab fa-github"></i> GitHub</span>
+              <span class="tag"><i class="fas fa-cloud"></i> Netlify</span>
+              <span class="tag"><i class="fas fa-server"></i> Vercel</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="about-text">
+              <h4>Localização</h4>
+              <p>Brasil, 00000000</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div class="about-text">
+              <h4>Telefone</h4>
+              <p>(11) 0000-0000</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div class="about-text">
+              <h4>Email</h4>
+              <p>abc@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-globe"></i>
+            <div class="about-text">
+              <h4>Portfólio & GitHub</h4>
+              <p>Portfolio 1 | Portfolio 2 | GitHub</p>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <a href="https://github.com/eabl333"><i class="fab fa-github"></i></a>
+            <a href="www.linkedin.com/in/erick-aparecido-664195382"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Portfólio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <h2>Meus Projetos</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="imagem/Captura de tela 2026-03-04 145733.png" alt="Loja de Modas">
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-subtitle">Loja de Modas</span>
+            <h3>Loja de Modas</h3>
+            <p>Um site moderno e responsivo voltado para apresentar coleções de roupas e acessórios, com design elegante e navegação simples.</p>
+            <div class="portfolio-links">
+              <a href="https://www.lojasemporio.com.br/" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Site</a>
+              <button class="btn btn-outline project-details" data-title="Loja de Modas" data-img="imagem/Captura de tela 2026-03-04 145733.png" data-desc="Um site moderno e responsivo voltado para apresentar coleções de roupas e acessórios, com design elegante e navegação simples." data-link="https://www.lojasemporio.com.br/">Detalhes</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="imagem/WhatsApp Image 2025-11-28 at 17.18.26.jpeg" alt="Conecta Seus Negócios">
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-subtitle">Conecta Seus Negócios</span>
+            <h3>Negócio ao Mundo</h3>
+            <p>Um site informativo que apresenta ideias e oportunidades para empreendedores, com foco em inovação e crescimento global.</p>
+            <div class="portfolio-links">
+              <a href="https://delicate-froyo-8c9696.netlify.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Site</a>
+              <button class="btn btn-outline project-details" data-title="Conecta Seus Negócios" data-img="imagem/WhatsApp Image 2025-11-28 at 17.18.26.jpeg" data-desc="Um site informativo que apresenta ideias e oportunidades para empreendedores, com foco em inovação e crescimento global." data-link="https://delicate-froyo-8c9696.netlify.app/">Detalhes</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-img">
+            <img src="imagem/Captura de tela 2026-03-04 144047.png" alt="Filme Flix">
+          </div>
+          <div class="portfolio-info">
+            <span class="portfolio-subtitle">Barba Mia</span>
+            <h3>Barbearia Mia</h3>
+            <p>
+Um site moderno e elegante para uma barbearia, com design sofisticado e navegação intuitiva, destacando serviços, equipe e agendamento online.
+            </p>
+            <div class="portfolio-links">
+              <a href="https://www.barbamia.com.br/" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Site</a>
+              <button class="btn btn-outline project-details" data-title="Barbearia Mia" data-img="imagem/Captura de tela 2026-03-04 144047.png" data-desc="Um site moderno e elegante para uma barbearia, com design sofisticado e navegação intuitiva, destacando serviços, equipe e agendamento online" data-link="https://www.barbamia.com.br/">Detalhes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>    
+
+  <!-- Contato Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>Entre em Contato</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Vamos trabalhar juntos!</h3>
+          <p>Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato comigo através dos canais abaixo ou preencha o formulário.</p>
+          
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div class="contact-text">
+              <h4>Telefone / WhatsApp</h4>
+              <p>(67) 99686-6306</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p>abc@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="contact-text">
+              <h4>Localização</h4>
+              <p>Brasil</p>
+            </div>
+          </div>
+          
+          <a href="https://wa.me/5567996866306" class="btn" target="_blank" style="margin-top: 20px;">
+            <i class="fab fa-whatsapp"></i> Conversar no WhatsApp
+          </a>
+        </div>
+        
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Assunto</label>
+              <input type="text" id="subject" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Mensagem</label>
+              <textarea id="message" class="form-control" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn">Enviar Mensagem</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-code"></i> Erick
+        </div>
+        <p>  Desenvolvedor Web</p>
+        <div class="footer-links">
+          <a href="#home">Início</a>
+          <a href="#about">Sobre</a>
+          <a href="#projects">Projetos</a>
+          <a href="#contact">Contato</a>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/eabl333"><i class="fab fa-github"></i></a>
+          <a href="www.linkedin.com/in/erick-aparecido-664195382"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p class="copyright">© 2026 Erick Aparecido Brites Lopes. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast container (aria-live) -->
+  <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Project modal -->
+  <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" data-close="true"></div>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" aria-label="Fechar">&times;</button>
+      <div class="modal-media"><img src="" alt="" id="modalImage"></div>
+      <div class="modal-body">
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
+        <div class="modal-actions"><a id="modalLink" class="btn" href="#" target="_blank">Ver site</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Header scroll effect
+    (function () {
+      const header = document.getElementById('header');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const themeToggle = document.getElementById('themeToggle');
+
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 60);
+      });
+
+      // Mobile menu toggle with ARIA + icon state
+      mobileMenuBtn && mobileMenuBtn.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('active');
+        mobileMenuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        mobileMenuBtn.innerHTML = open ? '<i class="fas fa-times" aria-hidden="true"></i>' : '<i class="fas fa-bars" aria-hidden="true"></i>';
+        mobileMenuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        mobileMenuBtn && mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }));
+
+      // Close mobile on outside click
+      document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && mobileMenu.classList.contains('active')) {
+          mobileMenu.classList.remove('active');
+          mobileMenuBtn && mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Theme toggle (persist)
+      const saved = localStorage.getItem('theme') || 'dark';
+      document.documentElement.dataset.theme = saved;
+      updateThemeIcon(saved);
+
+      themeToggle && themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = current;
+        localStorage.setItem('theme', current);
+        updateThemeIcon(current);
+      });
+
+      function updateThemeIcon(mode) {
+        if (!themeToggle) return;
+        themeToggle.innerHTML = mode === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      }
+    })();
+
+    // IntersectionObserver reveal animations
+    (function () {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // If you want one-time reveal only:
+            // obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal, .portfolio-item, .contact-item, .tag').forEach(el => obs.observe(el));
+    })();
+
+    // Typing effect for hero
+    (function () {
+      const el = document.getElementById('typed');
+      if (!el) return;
+      const phrases = ['Sistemas de Informação', 'Desenvolvedor de Software', 'Desenvolvimento Web', 'Banco de Dados'];
+      let p = 0, i = 0, deleting = false;
+
+      function tick() {
+        const current = phrases[p];
+        if (!deleting) {
+          el.textContent = current.slice(0, ++i);
+          if (i === current.length) { deleting = true; setTimeout(tick, 900); return; }
+        } else {
+          el.textContent = current.slice(0, --i);
+          if (i === 0) { deleting = false; p = (p + 1) % phrases.length; }
+        }
+        setTimeout(tick, deleting ? 50 : 90);
+      }
+
+      setTimeout(tick, 600);
+    })();
+
+    // Button ripple effect + keyboard-friendly activation
+    (function () {
+      document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          const circle = document.createElement('span');
+          circle.style.position = 'absolute';
+          circle.style.borderRadius = '50%';
+          circle.style.transform = 'translate(-50%, -50%)';
+          circle.style.pointerEvents = 'none';
+          circle.style.background = 'rgba(255,255,255,0.12)';
+          const rect = this.getBoundingClientRect();
+          circle.style.left = (e.clientX - rect.left) + 'px';
+          circle.style.top = (e.clientY - rect.top) + 'px';
+          circle.style.width = circle.style.height = Math.max(rect.width, rect.height) + 'px';
+          circle.style.opacity = '0.9';
+          circle.style.transition = 'opacity 500ms ease, transform 500ms ease';
+          this.appendChild(circle);
+          requestAnimationFrame(() => { circle.style.transform = 'translate(-50%,-50%) scale(0.1)'; circle.style.opacity = '0.6'; });
+          setTimeout(() => { circle.style.opacity = '0'; }, 300);
+          setTimeout(() => circle.remove(), 900);
+        });
+      });
+    })();
+
+    // Contact form: validate and show toast instead of alert
+    (function () {
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = form.querySelector('#name');
+        const email = form.querySelector('#email');
+        const message = form.querySelector('#message');
+        if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+          showToast('Preencha todos os campos antes de enviar.', 'error');
+          return;
+        }
+        // Aqui você pode enviar para backend ou serviço externo
+        form.reset();
+        showToast('Obrigado pela mensagem! Entrarei em contato em breve.', 'success');
+      });
+
+      function showToast(text, type='info') {
+        const container = document.getElementById('toastContainer');
+        if (!container) {
+          console.warn('Toast container não encontrado');
+          return;
+        }
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.setAttribute('role', 'status');
+        toast.setAttribute('aria-live', 'polite');
+        toast.style.background = type === 'success' ? 'linear-gradient(90deg, #10b981, #06b6d4)' : 'linear-gradient(90deg, #f97316, #f43f5e)';
+        toast.textContent = text;
+        container.appendChild(toast);
+        toast.animate([{ transform: 'translateY(12px)', opacity: 0 }, { transform: 'translateY(0)', opacity: 1 }], { duration: 320, easing: 'cubic-bezier(.2,.9,.2,1)' });
+        setTimeout(() => { toast.animate([{ transform: 'translateY(0)', opacity: 1 }, { transform: 'translateY(12px)', opacity: 0 }], { duration: 300 }); setTimeout(() => toast.remove(), 300); }, 3500);
+      }
+    })();
+
+    // Smooth scrolling for internal anchors (keeps earlier behaviour)
+    (function () {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (!targetId || targetId === '#') return;
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            e.preventDefault();
+            const top = Math.max(0, targetElement.getBoundingClientRect().top + window.scrollY - 84);
+            window.scrollTo({ top, behavior: 'smooth' });
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (mobileMenu) mobileMenu.classList.remove('active');
+          }
+        });
+      });
+    })();
+
+    // Project modal (open/close + focus trap)
+    (function () {
+      const modal = document.getElementById('projectModal');
+      if (!modal) return;
+      const modalImage = document.getElementById('modalImage');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
+      const modalLink = document.getElementById('modalLink');
+      const modalClose = modal.querySelector('.modal-close');
+      let lastFocused = null;
+
+      function openModal(data) {
+        lastFocused = document.activeElement;
+        modalImage.src = data.img || '';
+        modalImage.alt = data.title || '';
+        modalTitle.textContent = data.title || '';
+        modalDescription.textContent = data.desc || '';
+        modalLink.href = data.link || '#';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        modalClose.focus();
+        trapFocus(modal);
+      }
+
+      function closeModal() {
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        if (lastFocused) lastFocused.focus();
+      }
+
+      document.querySelectorAll('.project-details').forEach(btn => btn.addEventListener('click', (e) => {
+        const t = e.currentTarget;
+        openModal({ title: t.dataset.title, img: t.dataset.img, desc: t.dataset.desc, link: t.dataset.link });
+      }));
+
+      modalClose.addEventListener('click', closeModal);
+      modal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
+
+      function trapFocus(node) {
+        const focusable = node.querySelectorAll('a[href], button, textarea, input, select, [tabindex]:not([tabindex="-1"])');
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        node.addEventListener('keydown', function (e) {
+          if (e.key !== 'Tab') return;
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
