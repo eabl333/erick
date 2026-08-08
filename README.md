@@ -1,150 +1,121 @@
 <div align="center">
 
-# 👨‍💻 Erick Aparecido
-
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=🚀+Desenvolvedor+Web+Júnior;💻+Criando+experiências+digitais;📚+Estudante+de+Sistemas+de+Informação" alt="Typing SVG" />
-
-<br />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=220&section=header&text=Erick%20Aparecido&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Desenvolvedor%20Web%20Júnior%20%7C%20Criador%20de%20Conteúdo&descAlignY=55&descSize=18" width="100%"/>
 
 <a href="https://github.com/eabl333">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-</a>
-<a href="mailto:erickapbrites@gmail.com">
-  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-</a>
-<a href="https://instagram.com/criadordesites26">
-  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
-</a>
-<a href="https://www.youtube.com/@erickcriadordesites">
-  <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
-</a>
-<a href="https://www.tiktok.com/@erickcriadordesites">
-  <img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok" />
-</a>
-<a href="https://k.kwai.com/u/@erickdev27/PzC4xGnj">
-  <img src="https://img.shields.io/badge/Kwai-FF6B00?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04IDggMy41OSA4IDgtMy41OSA4LTggOHoiLz48L3N2Zz4=&logoColor=white" alt="Kwai" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=26&duration=3000&pause=800&color=8A2BE2&center=true&vCenter=true&multiline=true&width=600&height=100&lines=%F0%9F%91%8B+Ol%C3%A1%2C+eu+sou+Erick;%F0%9F%9A%80+Desenvolvedor+Web+J%C3%BAnior;%F0%9F%92%BB+Criando+experi%C3%AAncias+digitais;%F0%9F%93%9A+Estudante+de+Sistemas+de+Informa%C3%A7%C3%A3o" alt="Typing SVG" />
 </a>
 
-<br />
-<br />
+<br/>
 
-<img src="https://komarev.com/ghpvc/?username=eabl333&color=58A6FF&style=flat-square&label=Profile+Views" alt="Profile views" />
+<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake-dark.svg" width="100%"/>
+
+<br/>
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/eabl333)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:erickapbrites@gmail.com)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/criadordesites26)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@erickcriadordesites)
+[![TikTok](https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@erickcriadordesites)
+[![Kwai](https://img.shields.io/badge/Kwai-FF6E00?style=for-the-badge&logo=kwai&logoColor=white)](https://k.kwai.com/u/@erickdev27/PzC4xGnj)
 
 </div>
 
-<br />
+<br/>
 
----
+## 🧑‍💻 Sobre mim
 
-## 👨‍💻 Sobre Mim
+<img align="right" src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="180"/>
 
-<div align="center">
+- 🎓 Estudante de **Sistemas de Informação**
+- 💻 **Desenvolvedor Web Júnior**, apaixonado por tecnologia
+- 🌐 Crio projetos web modernos, responsivos e funcionais
+- 📈 Estou constantemente aprimorando meus conhecimentos
+- 🎬 Também produzo conteúdo sobre tecnologia e desenvolvimento
+- 💼 Em busca de uma oportunidade como **Desenvolvedor Web Júnior**
 
-🎓 Estudante de **Sistemas de Informação**  
-💻 **Desenvolvedor Web Júnior** apaixonado por tecnologia  
-✨ Crio projetos web **modernos, responsivos e funcionais**  
-📚 Constantemente aprimorando meus conhecimentos  
-🎥 Criador de conteúdo sobre **tecnologia e desenvolvimento**  
-💼 Buscando minha primeira oportunidade profissional na área  
+<br clear="right"/>
 
-</div>
-
-<br />
-
----
+<br/>
 
 ## 🛠️ Tecnologias
 
 <div align="center">
 
-### 🎨 Frontend
+**Frontend**
 
-<img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML" />
-<img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS" />
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript" />
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React" />
-<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
-<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
-<img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+<img src="https://skillicons.dev/icons?i=html,css,js,react,nextjs,tailwind" />
 
-### ⚙️ Backend
+**Backend**
 
-<img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js" />
+<img src="https://skillicons.dev/icons?i=nodejs" />
 
-### 🗄️ Banco de Dados
+**Banco de Dados**
 
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB" />
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" alt="MySQL" />
+<img src="https://skillicons.dev/icons?i=mongodb,mysql" />
 
-### 🛠️ Ferramentas
+**Ferramentas**
 
-<img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
-<img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
-<img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visualstudiocode&logoColor=white" alt="VS Code" />
-<img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite" />
-<img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
-<img src="https://img.shields.io/badge/Netlify-00C7B7?style=flat-square&logo=netlify&logoColor=white" alt="Netlify" />
+<img src="https://skillicons.dev/icons?i=git,github,vscode,vite,vercel,netlify" />
 
-### 📖 Estudando
+**Outros Estudos**
 
-<img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black" alt="C" />
+<img src="https://skillicons.dev/icons?i=c" />
 
 </div>
 
-<br />
+<br/>
 
----
-
-## 📂 Projetos em Destaque
+## 🚀 Projetos em Destaque
 
 <div align="center">
 
 <table>
   <tr>
-    <td width="50%" valign="top">
-      <h3>🛍️ SP Mais Store — Loja de Moda</h3>
-      <p>Projeto de e-commerce com foco em uma experiência moderna para uma loja de roupas.</p>
+    <td width="50%">
+      <h3>🛍️ SP Mais Store</h3>
+      <p>E-commerce com foco em uma experiência moderna para loja de roupas.</p>
       <a href="https://github.com/eabl333/SP-Mais-Store-Loja-de-Modas">
-        <img src="https://img.shields.io/badge/Ver_Projeto-58A6FF?style=flat-square&logo=github&logoColor=white" alt="Ver Projeto" />
+        <img src="https://img.shields.io/badge/Ver_Repositório-8A2BE2?style=for-the-badge&logo=github&logoColor=white"/>
       </a>
     </td>
-    <td width="50%" valign="top">
+    <td width="50%">
       <h3>📰 Serginho Lapada News</h3>
-      <p>Projeto de site de notícias com apresentação organizada e responsiva.</p>
+      <p>Site de notícias com apresentação organizada e responsiva.</p>
       <a href="https://github.com/eabl333/Serginho-Lapada-News">
-        <img src="https://img.shields.io/badge/Ver_Projeto-58A6FF?style=flat-square&logo=github&logoColor=white" alt="Ver Projeto" />
+        <img src="https://img.shields.io/badge/Ver_Repositório-8A2BE2?style=for-the-badge&logo=github&logoColor=white"/>
       </a>
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
+    <td width="50%">
       <h3>🎮 GameHub</h3>
-      <p>Projeto relacionado ao universo dos games desenvolvido para praticar desenvolvimento web.</p>
+      <p>Projeto relacionado ao universo dos games, desenvolvido para praticar front-end.</p>
       <a href="https://github.com/eabl333/GameHub">
-        <img src="https://img.shields.io/badge/Ver_Projeto-58A6FF?style=flat-square&logo=github&logoColor=white" alt="Ver Projeto" />
+        <img src="https://img.shields.io/badge/Ver_Repositório-8A2BE2?style=for-the-badge&logo=github&logoColor=white"/>
       </a>
     </td>
-    <td width="50%" valign="top">
+    <td width="50%">
       <h3>🌐 Vitrine Digital</h3>
-      <p>Projeto de vitrine digital moderna e responsiva.</p>
+      <p>Vitrine digital moderna, responsiva e funcional.</p>
       <a href="https://github.com/eabl333/Vitrine-Digital">
-        <img src="https://img.shields.io/badge/Ver_Projeto-58A6FF?style=flat-square&logo=github&logoColor=white" alt="Ver Projeto" />
+        <img src="https://img.shields.io/badge/Ver_Repositório-8A2BE2?style=for-the-badge&logo=github&logoColor=white"/>
       </a>
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
+    <td width="50%">
       <h3>🛒 E-commerce</h3>
-      <p>Projeto de loja virtual desenvolvido para praticar interfaces, produtos e experiência do usuário.</p>
+      <p>Loja virtual desenvolvida para praticar interfaces e experiência do usuário.</p>
       <a href="https://github.com/eabl333/ECOMMERCE">
-        <img src="https://img.shields.io/badge/Ver_Projeto-58A6FF?style=flat-square&logo=github&logoColor=white" alt="Ver Projeto" />
+        <img src="https://img.shields.io/badge/Ver_Repositório-8A2BE2?style=for-the-badge&logo=github&logoColor=white"/>
       </a>
     </td>
-    <td width="50%" valign="top">
+    <td width="50%">
       <h3>🧮 Calculadora Moderna</h3>
-      <p>Projeto desenvolvido para praticar lógica de programação e interfaces interativas.</p>
+      <p>Projeto para praticar lógica de programação e interfaces interativas.</p>
       <a href="https://github.com/eabl333/2.-Calculadora-moderna">
-        <img src="https://img.shields.io/badge/Ver_Projeto-58A6FF?style=flat-square&logo=github&logoColor=white" alt="Ver Projeto" />
+        <img src="https://img.shields.io/badge/Ver_Repositório-8A2BE2?style=for-the-badge&logo=github&logoColor=white"/>
       </a>
     </td>
   </tr>
@@ -152,108 +123,78 @@
 
 </div>
 
-<br />
-
----
+<br/>
 
 ## 📊 Estatísticas do GitHub
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=eabl333&show_icons=true&theme=github_dark&hide_border=true&title_color=58A6FF&icon_color=58A6FF&text_color=C9D1D9&bg_color=0D1117&count_private=true&include_all_commits=true" alt="GitHub Stats" />
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=eabl333&layout=compact&theme=github_dark&hide_border=true&title_color=58A6FF&text_color=C9D1D9&bg_color=0D1117" alt="Top Languages" />
+<img src="https://github-readme-stats.vercel.app/api?username=eabl333&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" width="48%"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=eabl333&layout=compact&theme=tokyonight&hide_border=true" width="48%"/>
 
-<br />
-<br />
-
-<img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=eabl333&theme=github-dark&hide_border=true&background=0D1117&stroke=58A6FF&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" alt="GitHub Streak" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=eabl333&theme=tokyonight&hide_border=true" width="65%"/>
 
 </div>
 
-<br />
-
----
+<br/>
 
 ## 📈 Atividade no GitHub
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=eabl333&bg_color=0D1117&color=58A6FF&line=58A6FF&point=FFFFFF&area=true&hide_border=true" width="100%" alt="Activity Graph" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=eabl333&theme=tokyo-night&hide_border=true" width="100%"/>
 
 </div>
 
-<br />
+<br/>
 
----
-
-## 🏆 GitHub Trophies
+## 🏆 Troféus
 
 <div align="center">
 
-<img src="https://github-profile-trophy.vercel.app/?username=eabl333&theme=algolia&no-frame=true&margin-w=6&row=1&column=7" alt="Trophies" />
+<img src="https://github-profile-trophy.vercel.app/?username=eabl333&theme=tokyonight&no-frame=true&column=7&margin-w=8&margin-h=8" width="100%"/>
 
 </div>
 
-<br />
-
----
+<br/>
 
 ## 🎯 Atualmente
 
 <div align="center">
 
-| Meta | Status |
-|:-----|:------:|
-| 💻 Desenvolvimento Web | 🟢 |
-| 📚 Sistemas de Informação | 🟢 |
-| ⚛️ React | 🟢 |
-| 🟦 TypeScript | 🟢 |
-| 🟢 Node.js | 🟡 |
-| 🎨 Tailwind CSS | 🟢 |
-| 🗄️ Banco de Dados | 🟡 |
-| 🚀 Projetos para Portfólio | 🟢 |
-| 🎥 Criação de Conteúdo | 🟢 |
-| 💼 Oportunidade como Dev Web Jr. | 🔍 |
+| | |
+|---|---|
+| 💻 Desenvolvimento Web | 📚 Sistemas de Informação |
+| ⚛️ React | 🟢 Node.js |
+| 🎨 Tailwind CSS | 🗄️ Banco de Dados |
+| 🚀 Projetos para Portfólio | 🎥 Criação de Conteúdo |
+| 💼 Buscando oportunidade como Desenvolvedor Web Júnior | |
 
 </div>
 
-<br />
-
----
+<br/>
 
 ## 📱 Conecte-se comigo
 
 <div align="center">
 
-<a href="https://github.com/eabl333">
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-</a>
-<a href="https://instagram.com/criadordesites26">
-  <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
-</a>
-<a href="https://www.youtube.com/@erickcriadordesites">
-  <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
-</a>
-<a href="https://www.tiktok.com/@erickcriadordesites">
-  <img src="https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok" />
-</a>
-<a href="https://k.kwai.com/u/@erickdev27/PzC4xGnj">
-  <img src="https://img.shields.io/badge/Kwai-FF6B00?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04IDggMy41OSA4IDgtMy41OSA4LTggOHoiLz48L3N2Zz4=&logoColor=white" alt="Kwai" />
-</a>
-<a href="mailto:erickapbrites@gmail.com">
-  <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-</a>
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/eabl333)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/criadordesites26)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@erickcriadordesites)
+[![TikTok](https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@erickcriadordesites)
+[![Kwai](https://img.shields.io/badge/Kwai-FF6E00?style=for-the-badge&logo=kwai&logoColor=white)](https://k.kwai.com/u/@erickdev27/PzC4xGnj)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:erickapbrites@gmail.com)
 
 </div>
 
-<br />
-
----
+<br/>
 
 <div align="center">
 
 ### 💻 Transformando ideias em código e projetos em experiências.
 
-*Obrigado pela visita! Explore meus repositórios e acompanhe minha jornada no desenvolvimento web.* 🚀
+**Confira meus repositórios e acompanhe minha evolução como desenvolvedor 🚀**
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=120&section=footer" width="100%"/>
 
 </div>
