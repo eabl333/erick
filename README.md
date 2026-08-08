@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=58A6FF&height=160&section=header&text=&fontSize=0" width="100%" alt="wave" />
+# 👨‍💻 Erick Aparecido
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=700&lines=👋+Olá%2C+eu+sou+Erick+Aparecido;🚀+Desenvolvedor+Web+Júnior;💻+Criando+experiências+digitais;📚+Estudante+de+Sistemas+de+Informação" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=58A6FF&center=true&vCenter=true&width=600&lines=🚀+Desenvolvedor+Web+Júnior;💻+Criando+experiências+digitais;📚+Estudante+de+Sistemas+de+Informação" alt="Typing SVG" />
 
 <br />
 
@@ -255,9 +255,5 @@
 ### 💻 Transformando ideias em código e projetos em experiências.
 
 *Obrigado pela visita! Explore meus repositórios e acompanhe minha jornada no desenvolvimento web.* 🚀
-
-<br />
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=58A6FF&height=100&section=footer" width="100%" alt="wave footer" />
 
 </div>
