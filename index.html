@@ -429,6 +429,39 @@ footer{ border-top:1px solid var(--border); padding:44px 0; }
   .photo-frame{ width:78vw; }
   .skills-grid{ grid-template-columns:repeat(2,1fr); }
 }
+
+   .skills-title{ text-align:center; margin:60px 0 28px; color:#fff; font-size:1.2rem; }
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(6, 1fr);
+  grid-template-rows:repeat(2, auto);
+  grid-auto-flow:column;
+  gap:16px;
+}
+
+.skill-card{
+  background:var(--glass); border:1px solid var(--border); border-radius:12px;
+  padding:20px 10px; text-align:center; transition:var(--transition);
+}
+.skill-card:hover{ transform:translateY(-5px); border-color:rgba(37,99,235,.4); background:rgba(37,99,235,.08); }
+.skill-card i{ font-size:1.6rem; margin-bottom:10px; display:block; }
+.skill-card span{ font-size:.82rem; font-weight:600; color:var(--text); white-space:nowrap; 
+}
+
+   @media (max-width:900px){
+  .skills-grid{ grid-template-columns:repeat(4, 1fr); grid-template-rows:repeat(3, auto); }
+}
+
+@media (max-width:640px){
+  .skills-grid{ grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(4, auto); }
+}
+
+@media (max-width:380px){
+  .skills-grid{ grid-template-columns:repeat(2, 1fr); grid-template-rows:repeat(6, auto); }
+}
+
+   
 </style>
 </head>
 <body>
@@ -554,7 +587,7 @@ footer{ border-top:1px solid var(--border); padding:44px 0; }
       </div>
       <div class="contact-mini-item">
         <i class="fas fa-envelope"></i>
-        <div><h5>Email</h5><p>abc@gmail.com</p></div>
+        <div><h5>Email</h5><p>erickapbrites@gmail.com</p></div>
       </div>
     </div>
     <div class="social-inline reveal">
@@ -652,7 +685,7 @@ footer{ border-top:1px solid var(--border); padding:44px 0; }
           </a>
           <a href="mailto:abc@gmail.com" class="contact-card">
             <i class="fas fa-envelope"></i>
-            <div><h4>Email</h4><p>abc@gmail.com</p></div>
+            <div><h4>Email</h4><p>erickapbrites@gmail.com</p></div>
           </a>
           <div class="contact-card">
             <i class="fas fa-map-marker-alt"></i>
