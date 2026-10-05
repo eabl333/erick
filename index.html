@@ -3,1077 +3,517 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Erick Aparecido | Desenvolvedor Web e Estudante de Sistemas de Informação</title>
-<meta name="description" content="Portfólio de Erick Aparecido Brites Lopes, estudante de Sistemas de Informação e desenvolvedor web. Confira projetos em HTML, CSS, JavaScript, React e Next.js.">
+<title>Modelos de Sites | Erick</title>
+<meta name="description" content="Confira modelos de sites profissionais criados por Erick para lojas, barbearias, dentistas, escritórios, empresas e outros negócios.">
 <meta name="theme-color" content="#071129">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Erick Aparecido | Desenvolvedor Web">
-<meta property="og:description" content="Estudante de Sistemas de Informação e desenvolvedor web. Veja meus projetos e entre em contato.">
+<meta property="og:title" content="Modelos de Sites | Erick">
+<meta property="og:description" content="Modelos de sites profissionais criados por Erick para lojas, barbearias, dentistas, escritórios, empresas e outros negócios.">
 <meta property="og:image" content="WhatsApp Image 2025-10-04 at 13.35.24.jpeg">
-
 <link rel="icon" type="image/jpeg" href="WhatsApp Image 2025-10-04 at 13.35.24.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-/* ===========================
-   1. VARIÁVEIS / RESET
-=========================== */
-* { margin:0; padding:0; box-sizing:border-box; }
-
-:root{
-  --primary:#2563eb;
-  --accent:#22d3ee;
-  --bg-1:#070d1f;
-  --bg-2:#0c1428;
-  --surface:#0f1a30;
-  --surface-2:#111e38;
-  --glass:rgba(255,255,255,0.05);
-  --border:rgba(255,255,255,0.08);
-  --text:#e8ecf3;
-  --text-dim:#94a3b8;
-  --radius:14px;
-  --radius-sm:8px;
-  --shadow-lg:0 25px 60px rgba(2,6,23,0.55);
-  --shadow-sm:0 8px 24px rgba(2,6,23,0.35);
-  --ease:cubic-bezier(.2,.8,.2,1);
-  --transition: all .3s var(--ease);
-  --header-h:76px;
-}
-
-html{ scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
-
-body{
-  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
-  background:
-    radial-gradient(900px 500px at 12% 8%, rgba(37,99,235,.16), transparent 55%),
-    radial-gradient(700px 500px at 90% 15%, rgba(34,211,238,.10), transparent 55%),
-    linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 100%);
-  background-attachment:fixed;
-  color:var(--text);
-  line-height:1.6;
-  overflow-x:hidden;
-}
-
-.container{ width:100%; max-width:1180px; margin:0 auto; padding:0 24px; }
-section{ padding:110px 0; scroll-margin-top:var(--header-h); }
-img{ max-width:100%; display:block; }
-
-h1,h2,h3,h4{ font-weight:700; line-height:1.2; color:#fff; }
-h1{ font-size:clamp(2.1rem, 4.5vw, 3.6rem); }
-h2{ font-size:clamp(1.7rem, 3vw, 2.4rem); text-align:center; margin-bottom:14px; }
-h3{ font-size:clamp(1.2rem, 2vw, 1.5rem); }
-p{ color:var(--text-dim); }
-
-.eyebrow{
-  display:block; text-align:center; color:var(--accent);
-  font-weight:600; letter-spacing:.08em; text-transform:uppercase;
-  font-size:.8rem; margin-bottom:10px;
-}
-.section-head{ margin-bottom:56px; }
-
-a{ color:inherit; }
-
-/* Skip link */
-.skip-link{ position:absolute; left:-9999px; top:8px; background:var(--primary); color:#fff; padding:10px 16px; border-radius:8px; z-index:3000; font-weight:600; }
-.skip-link:focus{ left:16px; top:12px; }
-
-:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:4px; }
-
-@media (prefers-reduced-motion: reduce){
-  *, *::before, *::after{
-    animation-duration:0.001ms !important;
-    animation-iteration-count:1 !important;
-    transition-duration:0.001ms !important;
-    scroll-behavior:auto !important;
-  }
-}
-
-/* ===========================
-   2. BOTÕES
-=========================== */
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:.55rem;
-  padding:.9rem 1.6rem; border-radius:10px; border:1px solid transparent;
-  background:linear-gradient(135deg,var(--primary),#1d4fd8);
-  color:#fff; font-weight:600; font-size:.95rem; cursor:pointer;
-  box-shadow:0 10px 24px rgba(37,99,235,.28);
-  transition:var(--transition); text-decoration:none; font-family:inherit;
-}
-.btn:hover{ transform:translateY(-3px); box-shadow:0 16px 34px rgba(37,99,235,.36); }
-.btn-outline{
-  background:transparent; border:1px solid var(--border); color:var(--text);
-  box-shadow:none;
-}
-.btn-outline:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-3px); background:rgba(34,211,238,.06); }
-.btn-sm{ padding:.6rem 1.1rem; font-size:.85rem; }
-
-/* ===========================
-   3. HEADER / NAVBAR
-=========================== */
-header{
-  position:fixed; inset:0 0 auto 0; z-index:1000; height:var(--header-h);
-  display:flex; align-items:center;
-  background:rgba(7,13,29,.55);
-  backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,.05);
-  transition:var(--transition);
-}
-header.scrolled{ background:rgba(7,13,29,.85); box-shadow:0 10px 30px rgba(0,0,0,.35); }
-
-.navbar{ display:flex; align-items:center; justify-content:space-between; width:100%; }
-.logo{ display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem; color:#fff; text-decoration:none; }
-.logo i{ color:var(--accent); }
-
-.nav-links{ display:flex; gap:32px; list-style:none; }
-.nav-links a{
-  color:var(--text-dim); text-decoration:none; font-weight:500; font-size:.95rem;
-  padding:6px 2px; position:relative; transition:color .25s ease;
-}
-.nav-links a::after{
-  content:''; position:absolute; left:0; bottom:-6px; height:2px; width:0;
-  background:linear-gradient(90deg,var(--accent),var(--primary));
-  transition:width .25s ease;
-}
-.nav-links a:hover{ color:#fff; }
-.nav-links a:hover::after,
-.nav-links a.active::after{ width:100%; }
-.nav-links a.active{ color:#fff; }
-
-.mobile-menu-btn{
-  display:none; background:none; border:0; color:#fff; font-size:1.4rem;
-  cursor:pointer; z-index:1300;
-}
-
-.mobile-menu{
-  position:fixed; top:0; right:-100%; width:min(320px,86vw); height:100vh;
-  background:linear-gradient(180deg, rgba(9,14,28,.98), rgba(15,22,42,.98));
-  backdrop-filter:blur(10px);
-  display:flex; flex-direction:column; gap:6px;
-  padding:110px 28px 40px; z-index:1200;
-  transition:right .35s var(--ease);
-  border-left:1px solid var(--border);
-}
-.mobile-menu.active{ right:0; }
-.mobile-menu a{
-  color:var(--text); text-decoration:none; font-weight:600; font-size:1.05rem;
-  padding:14px 4px; border-bottom:1px solid rgba(255,255,255,.06);
-}
-.menu-overlay{
-  position:fixed; inset:0; background:rgba(2,6,20,.55); z-index:1100;
-  opacity:0; pointer-events:none; transition:opacity .3s ease;
-}
-.menu-overlay.active{ opacity:1; pointer-events:auto; }
-
-/* ===========================
-   4. HERO
-=========================== */
-.hero{
-  min-height:100vh; display:flex; align-items:center; position:relative;
-  overflow:hidden; padding-top:var(--header-h);
-}
-.hero-bg-grid{
-  position:absolute; inset:0; z-index:-1; opacity:.35;
-  background-image:
-    linear-gradient(rgba(148,163,184,.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148,163,184,.06) 1px, transparent 1px);
-  background-size:44px 44px;
-  mask-image:radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 90%);
-}
-.hero-glow{ position:absolute; z-index:-1; border-radius:50%; filter:blur(70px); }
-.hero-glow.one{ width:520px; height:520px; top:-140px; right:-100px; background:rgba(37,99,235,.28); }
-.hero-glow.two{ width:380px; height:380px; bottom:-120px; left:-80px; background:rgba(34,211,238,.16); }
-
-.hero-content{ display:grid; grid-template-columns:1.15fr .85fr; gap:60px; align-items:center; }
-.hero-text{ max-width:620px; }
-.intro{ color:var(--accent); font-weight:600; margin-bottom:14px; font-size:1.05rem; }
-.highlight{ color:#fff; font-weight:800; }
-
-h1 .typed{
-  background:linear-gradient(135deg,var(--accent),var(--primary));
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-}
-.cursor{ display:inline-block; margin-left:4px; color:var(--accent); animation:blink 1s steps(2,start) infinite; }
-@keyframes blink{ 50%{ opacity:0; } }
-
-.description{ margin:22px 0 30px; color:var(--text-dim); font-size:1.02rem; max-width:560px; }
-
-.hero-buttons{ display:flex; gap:16px; flex-wrap:wrap; }
-
-.hero-visual{ position:relative; display:flex; justify-content:center; }
-.photo-frame{
-  position:relative; width:min(360px,80vw); aspect-ratio:1/1;
-  border-radius:28px; padding:6px;
-  background:linear-gradient(135deg, rgba(37,99,235,.55), rgba(34,211,238,.35));
-}
-.photo-frame img{
-  width:100%; height:100%; object-fit:cover; border-radius:24px;
-  border:3px solid rgba(7,13,29,.9);
-}
-.photo-frame::after{
-  content:''; position:absolute; inset:-16px; border-radius:34px;
-  border:1px dashed rgba(148,163,184,.25); pointer-events:none;
-}
-.orbit-dot{
-  position:absolute; width:12px; height:12px; border-radius:50%;
-  background:var(--accent); box-shadow:0 0 14px var(--accent);
-}
-.orbit-dot.d1{ top:-10px; left:20%; }
-.orbit-dot.d2{ bottom:12%; right:-14px; background:var(--primary); box-shadow:0 0 14px var(--primary); }
-
-.scroll-cue{
-  position:absolute; bottom:34px; left:50%; transform:translateX(-50%);
-  color:var(--text-dim); font-size:1.2rem; opacity:.6;
-  animation:floatY 2.4s ease-in-out infinite;
-}
-@keyframes floatY{ 0%,100%{ transform:translate(-50%,0);} 50%{ transform:translate(-50%,8px);} }
-
-/* ===========================
-   5. REVEAL
-=========================== */
-.reveal{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
-.reveal.active{ opacity:1; transform:translateY(0); }
-
-/* ===========================
-   6. SOBRE
-=========================== */
-.about-intro{ max-width:760px; margin:0 auto 48px; text-align:center; }
-.about-intro h3{ margin-bottom:12px; }
-.about-intro p + p{ margin-top:12px; }
-
-.about-cards{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:60px;
-}
-.info-card{
-  background:var(--glass); border:1px solid var(--border); border-radius:var(--radius);
-  padding:28px 24px; transition:var(--transition);
-}
-.info-card:hover{ transform:translateY(-6px); border-color:rgba(34,211,238,.35); box-shadow:var(--shadow-sm); }
-.info-card i{ font-size:1.5rem; color:var(--accent); margin-bottom:14px; display:block; }
-.info-card h4{ color:#fff; margin-bottom:8px; font-size:1.05rem; }
-.info-card p{ font-size:.92rem; margin:0; }
-.info-card ul{ margin:10px 0 0 18px; }
-.info-card li{ font-size:.88rem; margin-bottom:6px; color:var(--text-dim); }
-
-.skills-title{ text-align:center; margin:60px 0 28px; color:#fff; font-size:1.2rem; }
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(6, 1fr);
-  grid-template-rows:repeat(2, auto);
-  grid-auto-flow:column;
-  gap:16px;
-}
-.skill-card{
-  background:var(--glass); border:1px solid var(--border); border-radius:12px;
-  padding:20px 10px; text-align:center; transition:var(--transition);
-}
-.skill-card:hover{ transform:translateY(-5px); border-color:rgba(37,99,235,.4); background:rgba(37,99,235,.08); }
-.skill-card i{ font-size:1.6rem; margin-bottom:10px; display:block; }
-.skill-card span{ font-size:.82rem; font-weight:600; color:var(--text); white-space:nowrap; }
-
-.fa-html5{ color:#e34c26; } .fa-css3-alt{ color:#3b82c4; } .fa-square-js{ color:#f0db4f; }
-.fa-react{ color:#61dbfb; } .fa-git-alt{ color:#f1502f; } .fa-github{ color:#e8ecf3; }
-
-.contact-mini{ margin-top:60px; display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
-.contact-mini-item{ display:flex; align-items:center; gap:14px; }
-.contact-mini-item i{
-  width:44px; height:44px; border-radius:50%; background:rgba(37,99,235,.12);
-  display:flex; align-items:center; justify-content:center; color:var(--primary); flex-shrink:0;
-}
-.contact-mini-item h5{ color:#fff; font-size:.9rem; margin-bottom:2px; }
-.contact-mini-item p{ font-size:.85rem; margin:0; }
-.social-inline{ display:flex; gap:12px; margin-top:18px; }
-.social-inline a{
-  width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-  background:var(--glass); border:1px solid var(--border); transition:var(--transition); text-decoration:none;
-}
-.social-inline a:hover{ background:var(--primary); border-color:var(--primary); transform:translateY(-4px); }
-
-/* ===========================
-   7. PROJETOS
-=========================== */
-.filters{
-  display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:-20px 0 40px;
-}
-.filter-btn{
-  padding:.55rem 1.2rem; border-radius:999px; border:1px solid var(--border);
-  background:var(--glass); color:var(--text-dim); font-family:inherit;
-  font-weight:600; font-size:.85rem; cursor:pointer; transition:var(--transition);
-}
-.filter-btn:hover{ color:#fff; border-color:rgba(34,211,238,.4); }
-.filter-btn.active{
-  color:#fff; border-color:transparent;
-  background:linear-gradient(135deg,var(--primary),#1d4fd8);
-  box-shadow:0 8px 20px rgba(37,99,235,.3);
-}
-
-.portfolio-grid{
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:28px; margin-top:20px;
-}
-.portfolio-item{
-  border-radius:var(--radius); overflow:hidden; background:var(--surface);
-  border:1px solid var(--border); transition:var(--transition);
-  display:flex; flex-direction:column;
-}
-.portfolio-item.hide{ display:none; }
-.portfolio-item:hover{ transform:translateY(-8px); box-shadow:var(--shadow-lg); border-color:rgba(34,211,238,.3); }
-
-.portfolio-img{ position:relative; height:210px; overflow:hidden; background:#0a1224; }
-.portfolio-img img{ width:100%; height:100%; object-fit:cover; object-position:top; transition:transform .5s var(--ease); }
-.portfolio-item:hover .portfolio-img img{ transform:scale(1.06); }
-.portfolio-img::after{
-  content:''; position:absolute; inset:0;
-  background:linear-gradient(180deg, transparent 40%, rgba(6,10,22,.85) 100%);
-  opacity:0; transition:opacity .35s ease;
-}
-.portfolio-item:hover .portfolio-img::after{ opacity:1; }
-
-.portfolio-info{ padding:22px; display:flex; flex-direction:column; flex:1; }
-.portfolio-subtitle{
-  color:var(--accent); font-size:.75rem; font-weight:700; text-transform:uppercase;
-  letter-spacing:.06em; display:block; margin-bottom:8px;
-}
-.portfolio-info h3{ margin-bottom:10px; font-size:1.15rem; }
-.portfolio-info p{ font-size:.92rem; margin-bottom:18px; flex:1; }
-.portfolio-links{ display:flex; gap:10px; flex-wrap:wrap; }
-.portfolio-links a, .portfolio-links button{ font-size:.85rem; }
-
-/* ===========================
-   8. MODAL
-=========================== */
-.modal{ position:fixed; inset:0; z-index:1900; display:none; align-items:center; justify-content:center; padding:20px; }
-.modal[aria-hidden="false"]{ display:flex; }
-.modal-backdrop{ position:absolute; inset:0; background:rgba(3,7,20,.72); backdrop-filter:blur(3px); }
-.modal-dialog{
-  position:relative; width:min(760px,100%); max-height:90vh; overflow-y:auto;
-  background:linear-gradient(160deg, var(--surface-2), var(--surface));
-  border:1px solid var(--border); border-radius:18px; padding:30px;
-  display:flex; flex-direction:column; gap:20px;
-  transform:translateY(16px) scale(.97); opacity:0;
-  transition:transform .3s var(--ease), opacity .25s ease;
-}
-.modal[aria-hidden="false"] .modal-dialog{ transform:translateY(0) scale(1); opacity:1; }
-.modal-media img{ width:100%; height:260px; object-fit:cover; object-position:top; border-radius:12px; }
-.modal-close{
-  position:absolute; right:16px; top:14px; background:var(--glass); border:1px solid var(--border);
-  width:36px; height:36px; border-radius:50%; color:#fff; font-size:1.2rem; cursor:pointer; z-index:2;
-}
-#modalCategory{ color:var(--accent); font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; display:block; }
-.modal-body p{ margin-bottom:18px; }
-body.modal-open{ overflow:hidden; }
-
-/* ===========================
-   9. CONTATO
-=========================== */
-.contact-content{ display:grid; grid-template-columns:1fr 1fr; gap:50px; margin-top:10px; }
-.contact-lead{ margin-bottom:28px; }
-.contact-cards{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:26px; }
-.contact-card{
-  display:flex; align-items:center; gap:14px; padding:16px; border-radius:12px;
-  background:var(--glass); border:1px solid var(--border); transition:var(--transition); text-decoration:none;
-}
-.contact-card:hover{ transform:translateY(-4px); border-color:rgba(37,99,235,.4); }
-.contact-card i{
-  width:42px; height:42px; border-radius:50%; background:rgba(37,99,235,.12);
-  display:flex; align-items:center; justify-content:center; color:var(--primary); flex-shrink:0;
-}
-.contact-card h4{ font-size:.9rem; color:#fff; margin-bottom:2px; }
-.contact-card p{ font-size:.82rem; margin:0; }
-.contact-card.whatsapp{ background:rgba(37,211,102,.08); border-color:rgba(37,211,102,.3); grid-column:1/-1; }
-.contact-card.whatsapp i{ background:rgba(37,211,102,.15); color:#25d366; }
-
-.contact-form{
-  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
-  padding:30px;
-}
-.form-group{ margin-bottom:20px; }
-.form-group label{ display:block; margin-bottom:8px; font-weight:600; font-size:.88rem; color:#fff; }
-.form-control{
-  width:100%; padding:12px 14px; background:rgba(255,255,255,.03); border:1px solid var(--border);
-  border-radius:8px; color:var(--text); font-family:inherit; font-size:.95rem; transition:var(--transition);
-}
-.form-control:focus{ outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(37,99,235,.18); }
-.form-control.error{ border-color:#f43f5e; }
-.field-error{ color:#f87171; font-size:.78rem; margin-top:6px; display:none; }
-.field-error.show{ display:block; }
-textarea.form-control{ min-height:130px; resize:vertical; }
-.form-note{ font-size:.78rem; color:var(--text-dim); margin-top:14px; }
-
-/* ===========================
-   10. TOAST
-=========================== */
-.toast-container{ position:fixed; right:20px; bottom:20px; display:flex; flex-direction:column; gap:10px; z-index:2100; max-width:90vw; }
-.toast{ padding:14px 20px; border-radius:10px; color:#fff; font-size:.9rem; box-shadow:var(--shadow-sm); }
-.toast.success{ background:linear-gradient(90deg,#10b981,#06b6d4); }
-.toast.error{ background:linear-gradient(90deg,#f97316,#f43f5e); }
-
-/* ===========================
-   11. FOOTER
-=========================== */
-footer{ border-top:1px solid var(--border); padding:44px 0; }
-.footer-content{ display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center; }
-.footer-logo{ font-size:1.2rem; font-weight:800; color:#fff; display:flex; align-items:center; gap:8px; }
-.footer-links{ display:flex; gap:22px; flex-wrap:wrap; justify-content:center; }
-.footer-links a{ color:var(--text-dim); text-decoration:none; font-size:.9rem; transition:color .2s; }
-.footer-links a:hover{ color:var(--accent); }
-.copyright{ color:#64748b; font-size:.82rem; }
-
-/* ===========================
-   12. RESPONSIVIDADE
-=========================== */
-@media (max-width:1024px){
-  .about-cards{ grid-template-columns:1fr 1fr; }
-}
-@media (max-width:900px){
-  .hero-content{ grid-template-columns:1fr; text-align:center; }
-  .hero-text{ margin:0 auto; }
-  .hero-buttons{ justify-content:center; }
-  .hero-visual{ order:-1; }
-  .nav-links{ display:none; }
-  .mobile-menu-btn{ display:inline-flex; align-items:center; justify-content:center; }
-  .contact-content{ grid-template-columns:1fr; }
-  .about-cards{ grid-template-columns:1fr; }
-  .contact-mini{ grid-template-columns:1fr; }
-  .skills-grid{ grid-template-columns:repeat(4, 1fr); grid-template-rows:repeat(3, auto); }
-}
-@media (max-width:640px){
-  section{ padding:76px 0; }
-  .container{ padding:0 18px; }
-  .portfolio-grid{ grid-template-columns:1fr; }
-  .contact-cards{ grid-template-columns:1fr; }
-  .hero-buttons .btn{ width:100%; }
-  .hero-buttons{ flex-direction:column; }
-  .modal-dialog{ padding:22px; }
-  .skills-grid{ grid-template-columns:repeat(3, 1fr); grid-template-rows:repeat(4, auto); }
-}
-@media (max-width:380px){
-  .photo-frame{ width:78vw; }
-  .skills-grid{ grid-template-columns:repeat(2, 1fr); grid-template-rows:repeat(6, auto); }
-}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#2563eb;--accent:#22d3ee;--bg-1:#070d1f;--bg-2:#0c1428;--surface:#0f1a30;--surface-2:#111e38;--glass:rgba(255,255,255,.05);--border:rgba(255,255,255,.08);--text:#e8ecf3;--dim:#94a3b8;--r:14px;--sh:0 25px 60px rgba(2,6,23,.55);--ease:cubic-bezier(.2,.8,.2,1);--tr:all .3s var(--ease);--hh:76px}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:radial-gradient(900px 500px at 12% 8%,rgba(37,99,235,.16),transparent 55%),radial-gradient(700px 500px at 90% 15%,rgba(34,211,238,.1),transparent 55%),linear-gradient(180deg,var(--bg-1),var(--bg-2));background-attachment:fixed;color:var(--text);line-height:1.6;overflow-x:hidden;padding-top:env(safe-area-inset-top,0)}
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:100px 0;scroll-margin-top:var(--hh)}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-weight:700;line-height:1.2;color:#fff}
+h1{font-size:clamp(2.1rem,4.6vw,3.5rem)}
+h2{font-size:clamp(1.7rem,3vw,2.4rem);text-align:center;margin-bottom:14px}
+h3{font-size:clamp(1.15rem,2vw,1.4rem)}
+p{color:var(--dim)}
+a{color:inherit}
+.eyebrow{display:block;text-align:center;color:var(--accent);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;margin-bottom:10px}
+.lead{text-align:center;max-width:680px;margin:0 auto 48px}
+.skip-link{position:absolute;left:-9999px;top:8px;background:var(--primary);color:#fff;padding:10px 16px;border-radius:8px;z-index:3000;font-weight:600}
+.skip-link:focus{left:16px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.9rem 1.6rem;border-radius:10px;border:1px solid transparent;background:linear-gradient(135deg,var(--primary),#1d4fd8);color:#fff;font-weight:600;font-size:.95rem;cursor:pointer;box-shadow:0 10px 24px rgba(37,99,235,.28);transition:var(--tr);text-decoration:none;font-family:inherit}
+.btn:hover,.btn:focus-visible{transform:translateY(-3px);box-shadow:0 16px 34px rgba(37,99,235,.38)}
+.btn-outline{background:transparent;border-color:var(--border);color:var(--text);box-shadow:none}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);background:rgba(34,211,238,.06);box-shadow:none}
+.btn-wa{background:linear-gradient(135deg,#25d366,#128c7e);box-shadow:0 10px 24px rgba(37,211,102,.25)}
+.btn-wa:hover{box-shadow:0 16px 34px rgba(37,211,102,.35)}
+.btn-sm{padding:.6rem 1.1rem;font-size:.85rem}
+header{position:fixed;inset:0 0 auto 0;z-index:1000;height:var(--hh);display:flex;align-items:center;background:rgba(7,13,29,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.05);transition:var(--tr);padding-top:env(safe-area-inset-top,0)}
+header.scrolled{background:rgba(7,13,29,.88);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.navbar{display:flex;align-items:center;justify-content:space-between;width:100%;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.1rem;color:#fff;text-decoration:none;letter-spacing:.04em}
+.logo i{color:var(--accent)}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{color:var(--dim);text-decoration:none;font-weight:500;font-size:.93rem;padding:6px 2px;position:relative;transition:color .25s}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-6px;height:2px;width:0;background:linear-gradient(90deg,var(--accent),var(--primary));transition:width .25s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.mobile-menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.4rem;cursor:pointer;z-index:1300}
+.mobile-menu{position:fixed;top:0;right:-100%;width:min(320px,86vw);height:100%;background:rgba(9,14,28,.98);display:flex;flex-direction:column;padding:110px 28px 40px;z-index:1200;transition:right .35s var(--ease);border-left:1px solid var(--border)}
+.mobile-menu.active{right:0}
+.mobile-menu a{color:var(--text);text-decoration:none;font-weight:600;font-size:1.05rem;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.06)}
+.menu-overlay{position:fixed;inset:0;background:rgba(2,6,20,.55);z-index:1100;opacity:0;pointer-events:none;transition:opacity .3s}
+.menu-overlay.active{opacity:1;pointer-events:auto}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:var(--hh) 0 40px}
+.hero::before{content:'';position:absolute;inset:0;z-index:-1;opacity:.35;background-image:linear-gradient(rgba(148,163,184,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.06) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 40%,transparent 90%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 40%,transparent 90%)}
+.hero-content{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center}
+.hero-text{max-width:620px}
+h1 span{background:linear-gradient(135deg,var(--accent),var(--primary));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .description{margin:20px 0 12px;font-size:1.05rem}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap;margin:26px 0 22px}
+.badges{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;font-size:.88rem;font-weight:500;color:var(--text)}
+.badges li::first-letter{color:var(--accent)}
+.hero-visual{display:flex;justify-content:center}
+.photo-frame{position:relative;width:min(340px,80vw);aspect-ratio:1/1;border-radius:28px;padding:6px;background:linear-gradient(135deg,rgba(37,99,235,.55),rgba(34,211,238,.35))}
+.photo-frame img{width:100%;height:100%;object-fit:cover;border-radius:24px;border:3px solid rgba(7,13,29,.9)}
+.photo-frame::after{content:'';position:absolute;inset:-16px;border-radius:34px;border:1px dashed rgba(148,163,184,.25);pointer-events:none}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.active{opacity:1;transform:none}
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:36px}
+.filter-btn{padding:.55rem 1.2rem;border-radius:999px;border:1px solid var(--border);background:var(--glass);color:var(--dim);font-family:inherit;font-weight:600;font-size:.85rem;cursor:pointer;transition:var(--tr)}
+.filter-btn:hover{color:#fff;border-color:rgba(34,211,238,.4)}
+.filter-btn.active{color:#fff;border-color:transparent;background:linear-gradient(135deg,var(--primary),#1d4fd8);box-shadow:0 8px 20px rgba(37,99,235,.3)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.portfolio-item{border-radius:var(--r);overflow:hidden;background:var(--surface);border:1px solid var(--border);transition:var(--tr);display:flex;flex-direction:column}
+.portfolio-item.hide{display:none}
+.portfolio-item:hover{transform:translateY(-8px);box-shadow:var(--sh);border-color:rgba(34,211,238,.3)}
+.portfolio-img{height:210px;overflow:hidden;background:#0a1224;border-radius:var(--r) var(--r) 0 0}
+.portfolio-img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s var(--ease)}
+.portfolio-item:hover .portfolio-img img{transform:scale(1.06)}
+.portfolio-info{padding:22px;display:flex;flex-direction:column;flex:1}
+.seg{color:var(--accent);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.portfolio-info h3{margin-bottom:10px}
+.portfolio-info p{font-size:.92rem;margin-bottom:18px;flex:1}
+.links{display:flex;gap:10px;flex-wrap:wrap}
+.callout{margin-top:48px;text-align:center;padding:36px 24px;border-radius:var(--r);border:1px solid rgba(34,211,238,.25);background:linear-gradient(135deg,rgba(37,99,235,.14),rgba(34,211,238,.06))}
+.callout p{max-width:620px;margin:10px auto 22px}
+.grid{display:grid;gap:20px}
+.g5{grid-template-columns:repeat(5,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:24px;transition:var(--tr)}
+.card:hover{transform:translateY(-5px);border-color:rgba(34,211,238,.35)}
+.card i{font-size:1.4rem;color:var(--accent);margin-bottom:12px;display:block}
+.card h4{margin-bottom:6px;font-size:1.02rem}
+.card p,.card li{font-size:.9rem}
+.card ul{margin:10px 0 0 18px;color:var(--dim)}
+.seg-card{text-align:center;padding:22px 12px}
+.seg-card span{font-size:1.9rem;display:block;margin-bottom:8px}
+.seg-card h4{font-size:.92rem}
+.about-intro{max-width:760px;margin:0 auto 44px;text-align:center}
+.about-intro p{margin-top:12px}
+.tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
+.tag{padding:.5rem 1rem;border-radius:999px;background:var(--glass);border:1px solid var(--border);font-size:.85rem;font-weight:600}
+.tag i{margin-right:6px}
+.sub{text-align:center;margin:44px 0 6px;font-size:1.15rem}
+.fa-html5{color:#e34c26}.fa-css3-alt{color:#3b82c4}.fa-square-js{color:#f0db4f}.fa-react{color:#61dbfb}.fa-git-alt{color:#f1502f}
+.steps{counter-reset:s}
+.step::before{counter-increment:s;content:counter(s);display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:var(--primary);color:#fff;font-weight:700;margin-bottom:12px}
+.cta-box{text-align:center;max-width:760px;margin:0 auto}
+.cta-box .btn{margin:22px 0 10px}
+.contact-content{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.contact-card{display:flex;align-items:center;gap:12px;padding:14px;border-radius:12px;background:var(--glass);border:1px solid var(--border);transition:var(--tr);text-decoration:none;min-width:0}
+a.contact-card:hover{transform:translateY(-4px);border-color:rgba(37,99,235,.4)}
+.contact-card i{width:40px;height:40px;border-radius:50%;background:rgba(37,99,235,.12);display:flex;align-items:center;justify-content:center;color:var(--primary);flex-shrink:0}
+.contact-card h4{font-size:.88rem}
+.contact-card p{font-size:.8rem;overflow-wrap:anywhere}
+.contact-card.wa{grid-column:1/-1;background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.3)}
+.contact-card.wa i{background:rgba(37,211,102,.15);color:#25d366}
+.contact-form{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:30px}
+.fg{margin-bottom:18px}
+.fg label{display:block;margin-bottom:7px;font-weight:600;font-size:.88rem;color:#fff}
+.form-control{width:100%;padding:12px 14px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:inherit;font-size:.95rem;transition:var(--tr)}
+.form-control:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.18)}
+.form-control.error{border-color:#f43f5e}
+.field-error{color:#f87171;font-size:.78rem;margin-top:5px;display:none}
+.field-error.show{display:block}
+textarea.form-control{min-height:120px;resize:vertical}
+.form-note{font-size:.78rem;margin-top:12px}
+.final{text-align:center;padding:80px 0;border-top:1px solid var(--border)}
+.final p{max-width:600px;margin:12px auto 24px}
+footer{border-top:1px solid var(--border);padding:44px 0 calc(44px + env(safe-area-inset-bottom,0))}
+.footer-content{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.footer-links{display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+.footer-links a,.footer-content>a{color:var(--dim);text-decoration:none;font-size:.9rem;transition:color .2s}
+.footer-links a:hover,.footer-content>a:hover{color:var(--accent)}
+.copyright{color:#64748b;font-size:.82rem}
+.social{display:flex;gap:12px}
+.social a{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--glass);border:1px solid var(--border);transition:var(--tr);text-decoration:none}
+.social a:hover{background:var(--primary);transform:translateY(-4px)}
+.wa-float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0));z-index:900;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 10px 26px rgba(37,211,102,.4);text-decoration:none;transition:var(--tr)}
+.wa-float:hover{transform:scale(1.08)}
+.modal{position:fixed;inset:0;z-index:1900;display:none;align-items:center;justify-content:center;padding:20px}
+.modal[aria-hidden="false"]{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:rgba(3,7,20,.72);backdrop-filter:blur(3px)}
+.modal-dialog{position:relative;width:min(760px,100%);max-height:90vh;overflow-y:auto;background:linear-gradient(160deg,var(--surface-2),var(--surface));border:1px solid var(--border);border-radius:18px;padding:30px;display:flex;flex-direction:column;gap:18px}
+.modal-dialog img{width:100%;height:260px;object-fit:cover;object-position:top;border-radius:12px}
+.modal-close{position:absolute;right:16px;top:14px;background:var(--glass);border:1px solid var(--border);width:36px;height:36px;border-radius:50%;color:#fff;font-size:1.2rem;cursor:pointer;z-index:2}
+#modalCategory{color:var(--accent);font-size:.8rem;font-weight:700;text-transform:uppercase;display:block;margin-bottom:8px}
+#modalDescription{margin-bottom:18px}
+body.modal-open{overflow:hidden}
+.toast-container{position:fixed;right:20px;bottom:90px;display:flex;flex-direction:column;gap:10px;z-index:2100;max-width:90vw}
+.toast{padding:14px 20px;border-radius:10px;color:#fff;font-size:.9rem}
+.toast.success{background:linear-gradient(90deg,#10b981,#06b6d4)}
+.toast.error{background:linear-gradient(90deg,#f97316,#f43f5e)}
+@media(max-width:1024px){.g5{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){
+.hero-content{grid-template-columns:1fr;text-align:center}.hero-text{margin:0 auto}.hero-buttons,.badges{justify-content:center}.hero-visual{order:-1}
+.nav-links{display:none}.mobile-menu-btn{display:inline-flex}
+.contact-content,.g3{grid-template-columns:1fr}}
+@media(max-width:640px){section{padding:72px 0}.container{padding:0 18px}.g5{grid-template-columns:repeat(2,1fr)}.contact-cards{grid-template-columns:1fr}.hero-buttons .btn{width:100%}.portfolio-grid{grid-template-columns:1fr}.modal-dialog{padding:22px}}
 </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
-
-<!-- ===== HEADER ===== -->
 <header id="header">
   <div class="container navbar">
-    <a href="#home" class="logo"><i class="fas fa-code"></i> Erick</a>
-
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="nav-link" data-section="home">Início</a></li>
-      <li><a href="#about" class="nav-link" data-section="about">Sobre</a></li>
-      <li><a href="#portfolio" class="nav-link" data-section="portfolio">Projetos</a></li>
-      <li><a href="#contact" class="nav-link" data-section="contact">Contato</a></li>
+    <a href="#home" class="logo"><i class="fas fa-code"></i> ERICK</a>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link" data-s="home">Início</a></li>
+      <li><a href="#portfolio" class="nav-link" data-s="portfolio">Modelos</a></li>
+      <li><a href="#about" class="nav-link" data-s="about">Sobre</a></li>
+      <li><a href="#como-funciona" class="nav-link" data-s="como-funciona">Como funciona</a></li>
+      <li><a href="#contact" class="nav-link" data-s="contact">Contato</a></li>
     </ul>
-
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu">
-      <i class="fas fa-bars"></i>
-    </button>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
   </div>
 </header>
-
 <div class="menu-overlay" id="menuOverlay"></div>
 <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile">
-  <a href="#home">Início</a>
-  <a href="#about">Sobre</a>
-  <a href="#portfolio">Projetos</a>
-  <a href="#contact">Contato</a>
+  <a href="#home">Início</a><a href="#portfolio">Modelos</a><a href="#about">Sobre</a><a href="#como-funciona">Como funciona</a><a href="#contact">Contato</a>
 </nav>
 
 <main id="main" tabindex="-1">
 
-<!-- ===== HERO ===== -->
 <section class="hero" id="home">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-glow one"></div>
-  <div class="hero-glow two"></div>
-
   <div class="container hero-content">
     <div class="hero-text">
-      <p class="intro reveal">Olá, eu sou <span class="highlight">Erick</span> 👋</p>
-      <h1 class="reveal">Estudante de <span id="typed" class="typed">Sistemas de Informação</span><span class="cursor" aria-hidden="true">|</span></h1>
-      <p class="description reveal">
-        Foco em projetos e integração. Estudante de Sistemas de Informação, busco transformar ideias em soluções digitais práticas.
-        Trabalho com HTML, CSS e JavaScript, explorando também modelagem de sistemas, banco de dados e integração de tecnologias.
-        Meu objetivo é criar projetos funcionais, com design intuitivo e aplicabilidade real.
-      </p>
+      <h1 class="reveal">Sites profissionais <span>para o seu negócio</span></h1>
+      <p class="description reveal">Crio sites modernos, responsivos e personalizados para empresas, profissionais e negócios que querem ter uma presença profissional na internet.</p>
+      <p class="reveal">Confira alguns dos modelos que já desenvolvi para diferentes segmentos e veja como um site pode apresentar seus serviços, produtos e formas de contato aos seus clientes.</p>
       <div class="hero-buttons reveal">
-        <a href="#portfolio" class="btn">Ver meus projetos</a>
-        <a href="#contact" class="btn btn-outline">Entrar em contato</a>
+        <a href="#portfolio" class="btn">Ver modelos</a>
+        <a href="#como-funciona" class="btn btn-outline">Quero ter um site</a>
       </div>
+      <ul class="badges reveal">
+        <li>✓ Design moderno</li><li>✓ Responsivo para celular</li><li>✓ WhatsApp</li><li>✓ Personalizado para o seu negócio</li>
+      </ul>
     </div>
-
     <div class="hero-visual reveal">
-      <div class="photo-frame">
-        <img src="WhatsApp Image 2025-10-04 at 13.35.24.jpeg" alt="Foto de Erick Aparecido Brites Lopes">
-        <span class="orbit-dot d1"></span>
-        <span class="orbit-dot d2"></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="scroll-cue" aria-hidden="true"><i class="fas fa-chevron-down"></i></div>
-</section>
-
-<!-- ===== SOBRE ===== -->
-<section id="about">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Sobre mim</span>
-      <h2>Quem é Erick</h2>
-    </div>
-
-    <div class="about-intro reveal">
-      <h3><span class="highlight">Erick Aparecido Brites Lopes</span></h3>
-      <p>Estudante de Sistemas de Informação com foco em desenvolvimento web e programação. Experiência prática em HTML, CSS, JavaScript, React, Next.js e C, adquirida em projetos acadêmicos e pessoais, como criação de sites e jogos.</p>
-      <p>Perfil proativo, organizado e focado em aprendizado contínuo, buscando oportunidades para aplicar conhecimentos, contribuir com soluções digitais e crescer profissionalmente em um ambiente desafiador.</p>
-    </div>
-
-    <div class="about-cards">
-      <div class="info-card reveal">
-        <i class="fas fa-graduation-cap"></i>
-        <h4>Formação</h4>
-        <p>Bacharelado em Sistemas de Informação (início em março de 2025).</p>
-      </div>
-      <div class="info-card reveal">
-        <i class="fas fa-briefcase"></i>
-        <h4>Experiência</h4>
-        <p>Desenvolvedor Web — Projetos Pessoais / Universidade (março de 2025 – presente)</p>
-        <ul>
-          <li>Criação de softwares e sites com boas práticas</li>
-          <li>Revisão e otimização de código</li>
-          <li>Integração de sistemas</li>
-        </ul>
-      </div>
-      <div class="info-card reveal">
-        <i class="fas fa-bullseye"></i>
-        <h4>Objetivo</h4>
-        <p>Buscar oportunidades para aplicar conhecimentos, desenvolver soluções e crescer profissionalmente.</p>
-      </div>
-    </div>
-
-    <h4 class="skills-title reveal">Habilidades Técnicas</h4>
-    <div class="skills-grid">
-      <div class="skill-card reveal"><i class="fab fa-html5"></i><span>HTML</span></div>
-      <div class="skill-card reveal"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
-      <div class="skill-card reveal"><i class="fab fa-square-js"></i><span>JavaScript</span></div>
-      <div class="skill-card reveal"><i class="fab fa-react"></i><span>React</span></div>
-      <div class="skill-card reveal"><i class="fas fa-code"></i><span>Next.js</span></div>
-      <div class="skill-card reveal"><i class="fas fa-c"></i><span>C</span></div>
-      <div class="skill-card reveal"><i class="fas fa-laptop-code"></i><span>VS Code</span></div>
-      <div class="skill-card reveal"><i class="fab fa-git-alt"></i><span>Git</span></div>
-      <div class="skill-card reveal"><i class="fab fa-github"></i><span>GitHub</span></div>
-      <div class="skill-card reveal"><i class="fas fa-cloud"></i><span>Netlify</span></div>
-      <div class="skill-card reveal"><i class="fas fa-server"></i><span>Vercel</span></div>
-    </div>
-
-    <div class="contact-mini reveal">
-      <div class="contact-mini-item">
-        <i class="fas fa-map-marker-alt"></i>
-        <div><h5>Localização</h5><p>Brasil</p></div>
-      </div>
-      <div class="contact-mini-item">
-        <i class="fas fa-envelope"></i>
-        <div><h5>Email</h5><p>erickapbrites@gmail.com</p></div>
-      </div>
-    </div>
-    <div class="social-inline reveal">
-      <a href="https://github.com/eabl333" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/erick-aparecido-664195382" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <div class="photo-frame"><img src="WhatsApp Image 2025-10-04 at 13.35.24.jpeg" alt="Erick Aparecido Brites Lopes, criador de sites profissionais"></div>
     </div>
   </div>
 </section>
 
-<!-- ===== PROJETOS ===== -->
 <section id="portfolio">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Portfólio</span>
-      <h2>Meus Projetos</h2>
-    </div>
+    <span class="eyebrow">Portfólio</span>
+    <h2>Modelos de Sites</h2>
+    <p class="lead">Confira alguns dos sites que desenvolvi para diferentes tipos de negócios e profissionais.</p>
 
-    <!-- Filtros -->
-    <div class="filters reveal" role="group" aria-label="Filtrar projetos por categoria">
+    <div class="filters" role="group" aria-label="Filtrar modelos por segmento">
       <button class="filter-btn active" data-filter="all">Todos</button>
-      <button class="filter-btn" data-filter="saude">Saúde</button>
+      <button class="filter-btn" data-filter="moda">Loja de Roupas</button>
+      <button class="filter-btn" data-filter="barbearia">Barbearia</button>
+      <button class="filter-btn" data-filter="saude">Odontologia</button>
       <button class="filter-btn" data-filter="noticias">Notícias</button>
-      <button class="filter-btn" data-filter="moda">Moda</button>
-      <button class="filter-btn" data-filter="negocios">Negócios</button>
+      <button class="filter-btn" data-filter="empresas">Empresas</button>
     </div>
 
     <div class="portfolio-grid" id="portfolioGrid">
 
-      <!-- 1. Loja de Modas -->
       <article class="portfolio-item reveal" data-cat="moda">
-        <div class="portfolio-img">
-          <img src="Captura de tela 2026-03-04 145733.png" alt="Captura de tela do site Loja de Modas" loading="lazy">
-        </div>
+        <div class="portfolio-img"><img src="Captura de tela 2026-03-04 145733.png" alt="Site para loja de roupas e acessórios: Loja de Modas" loading="lazy"></div>
         <div class="portfolio-info">
-          <span class="portfolio-subtitle">Loja de Modas</span>
-          <h3>Loja de Modas</h3>
+          <span class="seg">Loja de Roupas</span><h3>Loja de Modas</h3>
           <p>Um site moderno e responsivo voltado para apresentar coleções de roupas e acessórios, com design elegante e navegação simples.</p>
-          <div class="portfolio-links">
-            <a href="https://www.lojasemporio.com.br/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver Site</a>
-            <button class="btn btn-outline btn-sm project-details"
-              data-title="Loja de Modas" data-category="Loja de Modas"
-              data-img="Captura de tela 2026-03-04 145733.png"
-              data-desc="Um site moderno e responsivo voltado para apresentar coleções de roupas e acessórios, com design elegante e navegação simples."
-              data-link="https://www.lojasemporio.com.br/">Detalhes</button>
+          <div class="links">
+            <a href="https://www.lojasemporio.com.br/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver site</a>
+            <button class="btn btn-outline btn-sm project-details" data-title="Loja de Modas" data-category="Loja de Roupas" data-img="Captura de tela 2026-03-04 145733.png" data-desc="Um site moderno e responsivo voltado para apresentar coleções de roupas e acessórios, com design elegante e navegação simples." data-link="https://www.lojasemporio.com.br/">Detalhes</button>
           </div>
         </div>
       </article>
 
-      <!-- 2. Negócio ao Mundo -->
-      <article class="portfolio-item reveal" data-cat="negocios">
-        <div class="portfolio-img">
-          <img src="WhatsApp Image 2025-11-28 at 17.18.26.jpeg" alt="Captura de tela do site Conecta Seus Negócios" loading="lazy">
-        </div>
+      <article class="portfolio-item reveal" data-cat="empresas">
+        <div class="portfolio-img"><img src="WhatsApp Image 2025-11-28 at 17.18.26.jpeg" alt="Site institucional para empresas: Negócio ao Mundo, Conecta Seus Negócios" loading="lazy"></div>
         <div class="portfolio-info">
-          <span class="portfolio-subtitle">Conecta Seus Negócios</span>
-          <h3>Negócio ao Mundo</h3>
+          <span class="seg">Empresas</span><h3>Negócio ao Mundo</h3>
           <p>Um site informativo que apresenta ideias e oportunidades para empreendedores, com foco em inovação e crescimento global.</p>
-          <div class="portfolio-links">
-            <a href="https://delicate-froyo-8c9696.netlify.app/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver Site</a>
-            <button class="btn btn-outline btn-sm project-details"
-              data-title="Negócio ao Mundo" data-category="Conecta Seus Negócios"
-              data-img="WhatsApp Image 2025-11-28 at 17.18.26.jpeg"
-              data-desc="Um site informativo que apresenta ideias e oportunidades para empreendedores, com foco em inovação e crescimento global."
-              data-link="https://delicate-froyo-8c9696.netlify.app/">Detalhes</button>
+          <div class="links">
+            <a href="https://delicate-froyo-8c9696.netlify.app/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver site</a>
+            <button class="btn btn-outline btn-sm project-details" data-title="Negócio ao Mundo" data-category="Conecta Seus Negócios" data-img="WhatsApp Image 2025-11-28 at 17.18.26.jpeg" data-desc="Um site informativo que apresenta ideias e oportunidades para empreendedores, com foco em inovação e crescimento global." data-link="https://delicate-froyo-8c9696.netlify.app/">Detalhes</button>
           </div>
         </div>
       </article>
 
-      <!-- 3. Barbearia Mia -->
-      <article class="portfolio-item reveal" data-cat="negocios">
-        <div class="portfolio-img">
-          <img src="Captura de tela 2026-03-04 144047.png" alt="Captura de tela do site Barbearia Mia" loading="lazy">
-        </div>
+      <article class="portfolio-item reveal" data-cat="barbearia">
+        <div class="portfolio-img"><img src="Captura de tela 2026-03-04 144047.png" alt="Site para barbearia: Barbearia Mia" loading="lazy"></div>
         <div class="portfolio-info">
-          <span class="portfolio-subtitle">Barba Mia</span>
-          <h3>Barbearia Mia</h3>
+          <span class="seg">Barbearia</span><h3>Barbearia Mia</h3>
           <p>Um site moderno e elegante para uma barbearia, com design sofisticado e navegação intuitiva, destacando serviços, equipe e agendamento online.</p>
-          <div class="portfolio-links">
-            <a href="https://www.barbamia.com.br/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver Site</a>
-            <button class="btn btn-outline btn-sm project-details"
-              data-title="Barbearia Mia" data-category="Barba Mia"
-              data-img="Captura de tela 2026-03-04 144047.png"
-              data-desc="Um site moderno e elegante para uma barbearia, com design sofisticado e navegação intuitiva, destacando serviços, equipe e agendamento online."
-              data-link="https://www.barbamia.com.br/">Detalhes</button>
+          <div class="links">
+            <a href="https://www.barbamia.com.br/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver site</a>
+            <button class="btn btn-outline btn-sm project-details" data-title="Barbearia Mia" data-category="Barbearia" data-img="Captura de tela 2026-03-04 144047.png" data-desc="Um site moderno e elegante para uma barbearia, com design sofisticado e navegação intuitiva, destacando serviços, equipe e agendamento online." data-link="https://www.barbamia.com.br/">Detalhes</button>
           </div>
         </div>
       </article>
 
-      <!-- 4. Dra. Maria Rita -->
       <article class="portfolio-item reveal" data-cat="saude">
-        <div class="portfolio-img">
-          <img src="Captura de tela 2026-10-01 104231.png" alt="Captura de tela do site da Dra. Maria Rita, Araújos Odontologia" loading="lazy">
-        </div>
+        <div class="portfolio-img"><img src="Captura de tela 2026-10-01 104231.png" alt="Site para dentista: Dra. Maria Rita, Araújos Odontologia" loading="lazy"></div>
         <div class="portfolio-info">
-          <span class="portfolio-subtitle">Araújos Odontologia</span>
-          <h3>Dra. Maria Rita</h3>
+          <span class="seg">Odontologia</span><h3>Dra. Maria Rita</h3>
           <p>Site para consultório de odontologia e harmonização facial em Anápolis, GO, com visual elegante, avaliações de pacientes e agendamento direto pelo WhatsApp.</p>
-          <div class="portfolio-links">
-            <a href="https://dra-maria-rita.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver Site</a>
-            <button class="btn btn-outline btn-sm project-details"
-              data-title="Dra. Maria Rita" data-category="Araújos Odontologia"
-              data-img="Captura de tela 2026-10-01 104231.png"
-              data-desc="Site para consultório de odontologia e harmonização facial em Anápolis, GO, com visual elegante, avaliações de pacientes e agendamento direto pelo WhatsApp."
-              data-link="https://dra-maria-rita.vercel.app/">Detalhes</button>
+          <div class="links">
+            <a href="https://dra-maria-rita.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver site</a>
+            <button class="btn btn-outline btn-sm project-details" data-title="Dra. Maria Rita" data-category="Araújos Odontologia" data-img="Captura de tela 2026-10-01 104231.png" data-desc="Site para consultório de odontologia e harmonização facial em Anápolis, GO, com visual elegante, avaliações de pacientes e agendamento direto pelo WhatsApp." data-link="https://dra-maria-rita.vercel.app/">Detalhes</button>
           </div>
         </div>
       </article>
 
-      <!-- 5. Repórter Serginho Lapada -->
       <article class="portfolio-item reveal" data-cat="noticias">
-        <div class="portfolio-img">
-          <img src="Captura de tela 2026-10-01 104630.png" alt="Captura de tela do portal Repórter Serginho Lapada" loading="lazy">
-        </div>
+        <div class="portfolio-img"><img src="Captura de tela 2026-10-01 104630.png" alt="Portal de notícias: Repórter Serginho Lapada" loading="lazy"></div>
         <div class="portfolio-info">
-          <span class="portfolio-subtitle">Notícias com atitude</span>
-          <h3>Repórter Serginho Lapada</h3>
+          <span class="seg">Notícias</span><h3>Repórter Serginho Lapada</h3>
           <p>Portal de notícias com letreiro de plantão, menu por categorias (Polícia, Política, Cidades, Esportes e mais), matérias em destaque e links para as redes sociais.</p>
-          <div class="portfolio-links">
-            <a href="https://www.serginholapada.com.br/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver Site</a>
-            <button class="btn btn-outline btn-sm project-details"
-              data-title="Repórter Serginho Lapada" data-category="Portal de Notícias"
-              data-img="Captura de tela 2026-10-01 104630.png"
-              data-desc="Portal de notícias com letreiro de plantão, menu por categorias (Polícia, Política, Cidades, Esportes e mais), matérias em destaque e links para as redes sociais."
-              data-link="https://www.serginholapada.com.br/">Detalhes</button>
+          <div class="links">
+            <a href="https://www.serginholapada.com.br/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver site</a>
+            <button class="btn btn-outline btn-sm project-details" data-title="Repórter Serginho Lapada" data-category="Portal de Notícias" data-img="Captura de tela 2026-10-01 104630.png" data-desc="Portal de notícias com letreiro de plantão, menu por categorias (Polícia, Política, Cidades, Esportes e mais), matérias em destaque e links para as redes sociais." data-link="https://www.serginholapada.com.br/">Detalhes</button>
           </div>
         </div>
       </article>
 
-      <!-- 6. Dra. Júlia Jacob -->
       <article class="portfolio-item reveal" data-cat="saude">
-        <div class="portfolio-img">
-          <img src="Captura de tela 2026-10-01 104813.png" alt="Captura de tela do site da Dra. Júlia Jacob, Odontologia Integrada" loading="lazy">
-        </div>
+        <div class="portfolio-img"><img src="Captura de tela 2026-10-01 104813.png" alt="Site para clínica odontológica: Dra. Júlia Jacob, Odontologia Integrada" loading="lazy"></div>
         <div class="portfolio-info">
-          <span class="portfolio-subtitle">Odontologia Integrada</span>
-          <h3>Dra. Júlia Jacob</h3>
+          <span class="seg">Odontologia</span><h3>Dra. Júlia Jacob</h3>
           <p>Site institucional para clínica de odontologia integrada em São Paulo, com hero em imagem de fundo, tratamentos, prevenção, especialistas, depoimentos e blog.</p>
-          <div class="portfolio-links">
-            <a href="https://dra-julia-jacob-bice.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver Site</a>
-            <button class="btn btn-outline btn-sm project-details"
-              data-title="Dra. Júlia Jacob" data-category="Odontologia Integrada"
-              data-img="Captura de tela 2026-10-01 104813.png"
-              data-desc="Site institucional para clínica de odontologia integrada em São Paulo, com hero em imagem de fundo, tratamentos, prevenção, especialistas, depoimentos e blog."
-              data-link="https://dra-julia-jacob-bice.vercel.app/">Detalhes</button>
+          <div class="links">
+            <a href="https://dra-julia-jacob-bice.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver site</a>
+            <button class="btn btn-outline btn-sm project-details" data-title="Dra. Júlia Jacob" data-category="Odontologia Integrada" data-img="Captura de tela 2026-10-01 104813.png" data-desc="Site institucional para clínica de odontologia integrada em São Paulo, com hero em imagem de fundo, tratamentos, prevenção, especialistas, depoimentos e blog." data-link="https://dra-julia-jacob-bice.vercel.app/">Detalhes</button>
           </div>
         </div>
       </article>
 
-      <!-- 7. Costas Reis -->
       <article class="portfolio-item reveal" data-cat="moda">
-        <div class="portfolio-img">
-          <img src="Captura de tela 2026-10-01 104938.png" alt="Captura de tela do site da loja Costas Reis" loading="lazy">
-        </div>
+        <div class="portfolio-img"><img src="Captura de tela 2026-10-01 104938.png" alt="Site para loja de roupas: Costas Reis" loading="lazy"></div>
         <div class="portfolio-info">
-          <span class="portfolio-subtitle">Loja de Roupas</span>
-          <h3>Costas Reis</h3>
+          <span class="seg">Loja de Roupas</span><h3>Costas Reis</h3>
           <p>Loja de roupas com identidade sofisticada e minimalista, apresentando a nova coleção outono/inverno, com carrinho de compras e chamadas claras para compra.</p>
-          <div class="portfolio-links">
-            <a href="https://loja-de-roupas-fitness.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver Site</a>
-            <button class="btn btn-outline btn-sm project-details"
-              data-title="Costas Reis" data-category="Loja de Roupas"
-              data-img="Captura de tela 2026-10-01 104938.png"
-              data-desc="Loja de roupas com identidade sofisticada e minimalista, apresentando a nova coleção outono/inverno, com carrinho de compras e chamadas claras para compra."
-              data-link="https://loja-de-roupas-fitness.vercel.app/">Detalhes</button>
+          <div class="links">
+            <a href="https://loja-de-roupas-fitness.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver site</a>
+            <button class="btn btn-outline btn-sm project-details" data-title="Costas Reis" data-category="Loja de Roupas" data-img="Captura de tela 2026-10-01 104938.png" data-desc="Loja de roupas com identidade sofisticada e minimalista, apresentando a nova coleção outono/inverno, com carrinho de compras e chamadas claras para compra." data-link="https://loja-de-roupas-fitness.vercel.app/">Detalhes</button>
           </div>
         </div>
       </article>
 
-      <!-- 8. Outlet Premium Caieiras -->
       <article class="portfolio-item reveal" data-cat="moda">
-        <div class="portfolio-img">
-          <img src="Captura de tela 2026-10-01 105126.png" alt="Captura de tela do site Outlet Premium Caieiras" loading="lazy">
-        </div>
+        <div class="portfolio-img"><img src="Captura de tela 2026-10-01 105126.png" alt="Site de moda urbana: Outlet Premium Caieiras" loading="lazy"></div>
         <div class="portfolio-info">
-          <span class="portfolio-subtitle">Moda Urbana</span>
-          <h3>Outlet Premium Caieiras</h3>
+          <span class="seg">Moda Urbana</span><h3>Outlet Premium Caieiras</h3>
           <p>Site de moda urbana com visual escuro e destaque em laranja, vitrine de produtos, promoções em evidência e botão de entrada no Grupo VIP.</p>
-          <div class="portfolio-links">
-            <a href="https://outle-caieiras.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver Site</a>
-            <button class="btn btn-outline btn-sm project-details"
-              data-title="Outlet Premium Caieiras" data-category="Moda Urbana"
-              data-img="Captura de tela 2026-10-01 105126.png"
-              data-desc="Site de moda urbana com visual escuro e destaque em laranja, vitrine de produtos, promoções em evidência e botão de entrada no Grupo VIP."
-              data-link="https://outle-caieiras.vercel.app/">Detalhes</button>
+          <div class="links">
+            <a href="https://outle-caieiras.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Ver site</a>
+            <button class="btn btn-outline btn-sm project-details" data-title="Outlet Premium Caieiras" data-category="Moda Urbana" data-img="Captura de tela 2026-10-01 105126.png" data-desc="Site de moda urbana com visual escuro e destaque em laranja, vitrine de produtos, promoções em evidência e botão de entrada no Grupo VIP." data-link="https://outle-caieiras.vercel.app/">Detalhes</button>
           </div>
         </div>
       </article>
+    </div>
 
+    <div class="callout reveal">
+      <h3>Gostou de algum modelo?</h3>
+      <p>Posso adaptar o projeto para o seu negócio, alterando cores, textos, imagens, serviços, produtos e informações de contato.</p>
+      <a href="https://wa.me/5567996866306" target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Quero meu site</a>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTATO ===== -->
-<section id="contact">
+<section id="segmentos">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Contato</span>
-      <h2>Vamos trabalhar juntos?</h2>
+    <h2>Sites para diferentes tipos de negócios</h2>
+    <p class="lead">Cada negócio possui necessidades diferentes. Por isso, os sites podem ser personalizados de acordo com o segmento.</p>
+    <div class="grid g5">
+      <div class="card seg-card reveal"><span>👕</span><h4>Lojas de roupas</h4></div>
+      <div class="card seg-card reveal"><span>💈</span><h4>Barbearias</h4></div>
+      <div class="card seg-card reveal"><span>🦷</span><h4>Dentistas</h4></div>
+      <div class="card seg-card reveal"><span>⚖️</span><h4>Escritórios de advocacia</h4></div>
+      <div class="card seg-card reveal"><span>📰</span><h4>Portais e sites de notícias</h4></div>
+      <div class="card seg-card reveal"><span>🍔</span><h4>Lanchonetes</h4></div>
+      <div class="card seg-card reveal"><span>💇</span><h4>Salões de beleza</h4></div>
+      <div class="card seg-card reveal"><span>🏢</span><h4>Empresas</h4></div>
+      <div class="card seg-card reveal"><span>🏋️</span><h4>Academias</h4></div>
+      <div class="card seg-card reveal"><span>📱</span><h4>Profissionais autônomos</h4></div>
+    </div>
+  </div>
+</section>
+
+<section id="recursos" style="padding-top:20px">
+  <div class="container">
+    <h2>O que seu site pode ter?</h2>
+    <p class="lead">O site pode ser personalizado de acordo com as necessidades do seu negócio.</p>
+    <div class="grid g3">
+      <div class="card reveal"><i class="fab fa-whatsapp"></i><h4>WhatsApp</h4><p>Facilite o contato dos seus clientes diretamente pelo WhatsApp.</p></div>
+      <div class="card reveal"><i class="fas fa-store"></i><h4>Catálogo de produtos</h4><p>Apresente produtos, fotos, informações e preços de forma organizada.</p></div>
+      <div class="card reveal"><i class="fas fa-list-check"></i><h4>Serviços</h4><p>Mostre de forma clara os serviços oferecidos pelo seu negócio.</p></div>
+      <div class="card reveal"><i class="fas fa-location-dot"></i><h4>Localização</h4><p>Ajude seus clientes a encontrarem sua empresa.</p></div>
+      <div class="card reveal"><i class="fab fa-instagram"></i><h4>Instagram</h4><p>Conecte seu site às suas redes sociais.</p></div>
+      <div class="card reveal"><i class="fas fa-calendar-check"></i><h4>Agendamento</h4><p>Facilite o contato e o agendamento de serviços.</p></div>
+      <div class="card reveal"><i class="fas fa-images"></i><h4>Galeria de fotos</h4><p>Mostre seus produtos, trabalhos, estrutura ou resultados.</p></div>
+      <div class="card reveal"><i class="fas fa-mobile-screen"></i><h4>Design responsivo</h4><p>Seu site funcionando bem em celular, tablet e computador.</p></div>
+      <div class="card reveal"><i class="fas fa-magnifying-glass"></i><h4>SEO básico</h4><p>Uma estrutura preparada para ajudar seu site a ser encontrado nos mecanismos de busca.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <span class="eyebrow">Sobre</span>
+    <h2>Quem é Erick</h2>
+    <div class="about-intro reveal">
+      <h3>Erick Aparecido Brites Lopes</h3>
+      <p>Sou estudante de Sistemas de Informação e desenvolvedor web, com foco na criação de sites modernos, responsivos e personalizados.</p>
+      <p>Trabalho no desenvolvimento de sites para diferentes tipos de negócios e profissionais, buscando criar páginas que apresentem de forma clara os produtos, serviços, informações e formas de contato de cada projeto.</p>
+      <p>Já desenvolvi projetos voltados para diferentes segmentos, incluindo lojas de roupas, barbearias, odontologia, notícias e outros tipos de negócios.</p>
+      <p>Meu objetivo é ajudar empresas e profissionais a terem uma presença profissional na internet por meio de sites funcionais, modernos e adaptados às necessidades de cada projeto.</p>
     </div>
 
-    <div class="contact-content">
-      <div class="contact-info">
-        <p class="contact-lead reveal">Estou sempre aberto a novas oportunidades, projetos e colaborações. Entre em contato pelos canais abaixo ou preencha o formulário.</p>
+    <div class="grid g3">
+      <div class="card reveal"><i class="fas fa-graduation-cap"></i><h4>Formação</h4><p>Bacharelado em Sistemas de Informação — Estácio EAD.</p><p>Início em março de 2025.</p></div>
+      <div class="card reveal"><i class="fas fa-briefcase"></i><h4>Criação de Sites — Projetos próprios</h4><p>Desenvolvimento de sites profissionais para diferentes segmentos, com foco em design responsivo, experiência do usuário, apresentação de serviços e produtos e facilidade de contato.</p>
+        <ul><li>Criação de sites profissionais</li><li>Desenvolvimento de páginas responsivas</li><li>Criação de layouts personalizados</li><li>Integração com WhatsApp</li><li>Integração com redes sociais</li><li>Apresentação de produtos e serviços</li><li>Organização de informações de empresas e profissionais</li><li>Publicação e hospedagem de sites</li></ul></div>
+      <div class="card reveal"><i class="fas fa-bullseye"></i><h4>Meu objetivo</h4><p>Meu objetivo é criar sites profissionais que ajudem empresas, profissionais e pequenos negócios a apresentarem melhor seus produtos e serviços na internet.</p><p style="margin-top:10px">Também busco continuar evoluindo como desenvolvedor web, aprendendo novas tecnologias e criando projetos cada vez melhores.</p></div>
+    </div>
 
+    <h3 class="sub reveal">Conhecimentos em criação de sites</h3>
+    <div class="tags reveal">
+      <span class="tag"><i class="fab fa-html5"></i>HTML</span><span class="tag"><i class="fab fa-css3-alt"></i>CSS</span><span class="tag"><i class="fab fa-square-js"></i>JavaScript</span><span class="tag"><i class="fab fa-react"></i>React</span><span class="tag"><i class="fas fa-code"></i>Next.js</span><span class="tag"><i class="fab fa-git-alt"></i>Git</span><span class="tag"><i class="fab fa-github"></i>GitHub</span><span class="tag"><i class="fas fa-server"></i>Vercel</span><span class="tag"><i class="fas fa-laptop-code"></i>VS Code</span><span class="tag" style="opacity:.6"><i class="fas fa-c"></i>C</span>
+    </div>
+    <div class="tags reveal">
+      <span class="tag">Sites responsivos</span><span class="tag">Landing Pages</span><span class="tag">Catálogos online</span><span class="tag">Integração com WhatsApp</span><span class="tag">Integração com Instagram</span><span class="tag">Interfaces modernas</span><span class="tag">Publicação de sites</span><span class="tag">Hospedagem na Vercel</span>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="container cta-box">
+    <span class="eyebrow">Como funciona</span>
+    <h2>Quer ter um site para o seu negócio?</h2>
+    <p style="color:#fff;font-weight:600">Seu negócio ainda não tem um site profissional?</p>
+    <p style="margin-top:8px">Posso criar um site personalizado para apresentar sua empresa, seus produtos ou serviços e facilitar o contato com seus clientes.</p>
+    <p style="margin-top:8px">Você pode escolher um modelo existente ou conversar comigo sobre um projeto desenvolvido de acordo com as necessidades do seu negócio.</p>
+    <a href="https://wa.me/5567996866306" target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Quero ter meu site</a>
+    <p style="font-size:.9rem">Fale comigo pelo WhatsApp e vamos conversar sobre seu projeto.</p>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:20px">
+  <div class="container">
+    <span class="eyebrow">Contato</span>
+    <h2>Quer ter um site para o seu negócio?</h2>
+    <div class="contact-content" style="margin-top:36px">
+      <div>
+        <p class="reveal">Se você tem uma empresa, loja, consultório, barbearia, escritório ou trabalha como profissional autônomo e quer ter um site profissional, entre em contato comigo.</p>
+        <p class="reveal" style="margin-top:12px">Podemos conversar sobre seu negócio, entender o que você precisa e definir a melhor estrutura para o seu site.</p>
         <div class="contact-cards reveal">
-          <a href="https://wa.me/5567996866306" target="_blank" rel="noopener" class="contact-card whatsapp">
-            <i class="fab fa-whatsapp"></i>
-            <div><h4>WhatsApp</h4><p>(67) 99686-6306</p></div>
-          </a>
-          <a href="mailto:erickapbrites@gmail.com" class="contact-card">
-            <i class="fas fa-envelope"></i>
-            <div><h4>Email</h4><p>erickapbrites@gmail.com</p></div>
-          </a>
-          <div class="contact-card">
-            <i class="fas fa-map-marker-alt"></i>
-            <div><h4>Localização</h4><p>Brasil</p></div>
-          </div>
-          <a href="https://github.com/eabl333" target="_blank" rel="noopener" class="contact-card">
-            <i class="fab fa-github"></i>
-            <div><h4>GitHub</h4><p>@eabl333</p></div>
-          </a>
-          <a href="https://www.linkedin.com/in/erick-aparecido-664195382" target="_blank" rel="noopener" class="contact-card">
-            <i class="fab fa-linkedin"></i>
-            <div><h4>LinkedIn</h4><p>Erick Aparecido</p></div>
-          </a>
+          <a href="https://wa.me/5567996866306" target="_blank" rel="noopener" class="contact-card wa"><i class="fab fa-whatsapp"></i><div><h4>WhatsApp</h4><p>(67) 99686-6306 · Falar pelo WhatsApp</p></div></a>
+          <a href="mailto:erickapbrites@gmail.com" class="contact-card"><i class="fas fa-envelope"></i><div><h4>Email</h4><p>erickapbrites@gmail.com</p></div></a>
+          <div class="contact-card"><i class="fas fa-map-marker-alt"></i><div><h4>Localização</h4><p>Brasil</p></div></div>
+          <a href="https://github.com/eabl333" target="_blank" rel="noopener" class="contact-card"><i class="fab fa-github"></i><div><h4>GitHub</h4><p>@eabl333</p></div></a>
+          <a href="https://www.linkedin.com/in/erick-aparecido-664195382" target="_blank" rel="noopener" class="contact-card"><i class="fab fa-linkedin"></i><div><h4>LinkedIn</h4><p>Erick Aparecido</p></div></a>
         </div>
       </div>
-
       <div class="contact-form reveal">
         <form id="contactForm" novalidate>
-          <div class="form-group">
-            <label for="name">Nome</label>
-            <input type="text" id="name" name="name" class="form-control" required>
-            <span class="field-error" id="nameError">Informe seu nome.</span>
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-            <span class="field-error" id="emailError">Informe um email válido.</span>
-          </div>
-          <div class="form-group">
-            <label for="subject">Assunto</label>
-            <input type="text" id="subject" name="subject" class="form-control" required>
-            <span class="field-error" id="subjectError">Informe o assunto.</span>
-          </div>
-          <div class="form-group">
-            <label for="message">Mensagem</label>
-            <textarea id="message" name="message" class="form-control" required></textarea>
-            <span class="field-error" id="messageError">Escreva sua mensagem.</span>
-          </div>
-          <button type="submit" class="btn" style="width:100%">Enviar Mensagem</button>
-          <p class="form-note">Este formulário não possui envio automático por e-mail. Ao clicar em enviar, sua mensagem é aberta no WhatsApp para contato direto.</p>
+          <div class="fg"><label for="name">Nome</label><input type="text" id="name" class="form-control" required><span class="field-error" id="nameError">Informe seu nome.</span></div>
+          <div class="fg"><label for="email">Email</label><input type="email" id="email" class="form-control" required><span class="field-error" id="emailError">Informe um email válido.</span></div>
+          <div class="fg"><label for="subject">Assunto</label><input type="text" id="subject" class="form-control" required><span class="field-error" id="subjectError">Informe o assunto.</span></div>
+          <div class="fg"><label for="message">Mensagem</label><textarea id="message" class="form-control" required></textarea><span class="field-error" id="messageError">Escreva sua mensagem.</span></div>
+          <button type="submit" class="btn" style="width:100%">Enviar mensagem</button>
+          <p class="form-note">Este formulário não envia e-mail automaticamente. Ao clicar em enviar, sua mensagem é aberta no WhatsApp para contato direto.</p>
         </form>
       </div>
     </div>
   </div>
 </section>
 
+<div class="final">
+  <div class="container">
+    <h2>Pronto para colocar seu negócio na internet?</h2>
+    <p>Tenha um site profissional para apresentar sua empresa, seus produtos ou serviços e facilitar o contato com seus clientes.</p>
+    <a href="https://wa.me/5567996866306" target="_blank" rel="noopener" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Quero ter um site</a>
+  </div>
+</div>
 </main>
 
-<!-- ===== FOOTER ===== -->
 <footer>
   <div class="container footer-content">
-    <div class="footer-logo"><i class="fas fa-code"></i> Erick</div>
-    <p>Desenvolvedor Web</p>
-    <nav class="footer-links">
-      <a href="#home">Início</a>
-      <a href="#about">Sobre</a>
-      <a href="#portfolio">Projetos</a>
-      <a href="#contact">Contato</a>
-    </nav>
-    <div class="social-inline">
+    <div class="logo"><i class="fas fa-code"></i> ERICK</div>
+    <p>Criação de sites profissionais</p>
+    <nav class="footer-links"><a href="#home">Início</a><a href="#portfolio">Modelos</a><a href="#about">Sobre</a><a href="#como-funciona">Como funciona</a><a href="#contact">Contato</a></nav>
+    <div class="social">
       <a href="https://github.com/eabl333" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/erick-aparecido-664195382" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
     </div>
+    <a href="https://wa.me/5567996866306" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> (67) 99686-6306</a>
     <p class="copyright">© 2026 Erick Aparecido Brites Lopes. Todos os direitos reservados.</p>
   </div>
 </footer>
 
-<div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+<a class="wa-float" href="https://wa.me/5567996866306" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
-<!-- ===== MODAL DE PROJETO ===== -->
 <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
-  <div class="modal-backdrop" data-close="true"></div>
-  <div class="modal-dialog" role="document">
+  <div class="modal-backdrop"></div>
+  <div class="modal-dialog">
     <button class="modal-close" aria-label="Fechar">&times;</button>
-    <div class="modal-media"><img src="" alt="" id="modalImage"></div>
-    <div class="modal-body">
-      <span id="modalCategory"></span>
-      <h3 id="modalTitle"></h3>
-      <p id="modalDescription"></p>
-      <a id="modalLink" class="btn" href="#" target="_blank" rel="noopener">Visitar projeto</a>
-    </div>
+    <img src="" alt="" id="modalImage">
+    <div><span id="modalCategory"></span><h3 id="modalTitle"></h3><p id="modalDescription"></p>
+    <a id="modalLink" class="btn" href="#" target="_blank" rel="noopener">Ver demonstração</a></div>
   </div>
 </div>
 
 <script>
-/* ===== Header scroll + scrollspy ===== */
-(function(){
-  const header = document.getElementById('header');
-  const links = document.querySelectorAll('.nav-link');
-  const sections = ['home','about','portfolio','contact'].map(id => document.getElementById(id));
-
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-
-    let current = sections[0].id;
-    sections.forEach(sec => {
-      const top = sec.getBoundingClientRect().top;
-      if (top - 100 <= 0) current = sec.id;
-    });
-    links.forEach(l => l.classList.toggle('active', l.dataset.section === current));
-  }, { passive:true });
-})();
-
-/* ===== Menu mobile ===== */
-(function(){
-  const btn = document.getElementById('mobileMenuBtn');
-  const menu = document.getElementById('mobileMenu');
-  const overlay = document.getElementById('menuOverlay');
-
-  function toggleMenu(open){
-    menu.classList.toggle('active', open);
-    overlay.classList.toggle('active', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    btn.innerHTML = open ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
-
-  btn.addEventListener('click', () => toggleMenu(!menu.classList.contains('active')));
-  overlay.addEventListener('click', () => toggleMenu(false));
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && menu.classList.contains('active')) toggleMenu(false);
-  });
-})();
-
-/* ===== Reveal on scroll ===== */
-(function(){
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-})();
-
-/* ===== Typing effect ===== */
-(function(){
-  const el = document.getElementById('typed');
-  if (!el) return;
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce) return;
-
-  const phrases = ['Sistemas de Informação','Desenvolvedor de Software','Desenvolvimento Web','Soluções Digitais'];
-  let p = 0, i = 0, deleting = false;
-
-  function tick(){
-    const current = phrases[p];
-    if (!deleting){
-      el.textContent = current.slice(0, ++i);
-      if (i === current.length){ deleting = true; setTimeout(tick, 1400); return; }
-    } else {
-      el.textContent = current.slice(0, --i);
-      if (i === 0){ deleting = false; p = (p+1) % phrases.length; }
-    }
-    setTimeout(tick, deleting ? 45 : 85);
-  }
-  setTimeout(tick, 800);
-})();
-
-/* ===== Filtro de projetos ===== */
-(function(){
-  const buttons = document.querySelectorAll('.filter-btn');
-  const items = document.querySelectorAll('#portfolioGrid .portfolio-item');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.dataset.filter;
-      buttons.forEach(b => b.classList.toggle('active', b === btn));
-
-      items.forEach(item => {
-        const show = filter === 'all' || item.dataset.cat === filter;
-        item.classList.toggle('hide', !show);
-        if (show) item.classList.add('active'); // garante que apareça mesmo sem rolar
-      });
-    });
-  });
-})();
-
-/* ===== Toast ===== */
-function showToast(text, type='success'){
-  const container = document.getElementById('toastContainer');
-  const toast = document.createElement('div');
-  toast.className = 'toast ' + type;
-  toast.setAttribute('role','status');
-  toast.textContent = text;
-  container.appendChild(toast);
-  setTimeout(() => toast.remove(), 4000);
-}
-
-/* ===== Formulário de contato (sem backend real -> abre WhatsApp) ===== */
-(function(){
-  const form = document.getElementById('contactForm');
-  if (!form) return;
-
-  const fields = ['name','email','subject','message'];
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    let valid = true;
-
-    fields.forEach(id => {
-      const input = document.getElementById(id);
-      const error = document.getElementById(id + 'Error');
-      const empty = !input.value.trim();
-      const invalidEmail = id === 'email' && input.value.trim() && !/^\S+@\S+\.\S+$/.test(input.value);
-
-      if (empty || invalidEmail){
-        input.classList.add('error');
-        error.classList.add('show');
-        valid = false;
-      } else {
-        input.classList.remove('error');
-        error.classList.remove('show');
-      }
-    });
-
-    if (!valid){
-      showToast('Verifique os campos destacados.', 'error');
-      return;
-    }
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    const text = encodeURIComponent(`Olá, meu nome é ${name}.\nAssunto: ${subject}\nEmail: ${email}\n\n${message}`);
-    window.open(`https://wa.me/5567996866306?text=${text}`, '_blank');
-
-    form.reset();
-    showToast('Mensagem preparada! Continue a conversa no WhatsApp.', 'success');
-  });
-})();
-
-/* ===== Modal de projeto ===== */
-(function(){
-  const modal = document.getElementById('projectModal');
-  if (!modal) return;
-  const modalImage = document.getElementById('modalImage');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalCategory = document.getElementById('modalCategory');
-  const modalDescription = document.getElementById('modalDescription');
-  const modalLink = document.getElementById('modalLink');
-  const modalClose = modal.querySelector('.modal-close');
-  let lastFocused = null;
-
-  function openModal(data){
-    lastFocused = document.activeElement;
-    modalImage.src = data.img || '';
-    modalImage.alt = data.title || '';
-    modalTitle.textContent = data.title || '';
-    modalCategory.textContent = data.category || '';
-    modalDescription.textContent = data.desc || '';
-    modalLink.href = data.link || '#';
-    modal.setAttribute('aria-hidden','false');
-    document.body.classList.add('modal-open');
-    modalClose.focus();
-  }
-
-  function closeModal(){
-    modal.setAttribute('aria-hidden','true');
-    document.body.classList.remove('modal-open');
-    if (lastFocused) lastFocused.focus();
-  }
-
-  document.querySelectorAll('.project-details').forEach(btn => {
-    btn.addEventListener('click', e => {
-      const t = e.currentTarget;
-      openModal({ title:t.dataset.title, category:t.dataset.category, img:t.dataset.img, desc:t.dataset.desc, link:t.dataset.link });
-    });
-  });
-
-  modalClose.addEventListener('click', closeModal);
-  modal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
-    if (e.key === 'Tab' && modal.getAttribute('aria-hidden') === 'false'){
-      const focusable = modal.querySelectorAll('a[href], button, [tabindex]:not([tabindex="-1"])');
-      const first = focusable[0], last = focusable[focusable.length - 1];
-      if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
-    }
-  });
-})();
+const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
+const WA='https://wa.me/5567996866306';
+/* header + scrollspy */
+(function(){const h=$('#header'),ids=['home','portfolio','about','como-funciona','contact'].map(i=>document.getElementById(i));
+addEventListener('scroll',()=>{h.classList.toggle('scrolled',scrollY>40);let c=ids[0].id;ids.forEach(s=>{if(s.getBoundingClientRect().top-100<=0)c=s.id});
+$$('.nav-link').forEach(l=>l.classList.toggle('active',l.dataset.s===c))},{passive:true})})();
+/* menu mobile */
+(function(){const b=$('#mobileMenuBtn'),m=$('#mobileMenu'),o=$('#menuOverlay');
+function t(open){m.classList.toggle('active',open);o.classList.toggle('active',open);b.setAttribute('aria-expanded',open);b.innerHTML=open?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';document.body.style.overflow=open?'hidden':''}
+b.onclick=()=>t(!m.classList.contains('active'));o.onclick=()=>t(false);m.querySelectorAll('a').forEach(a=>a.onclick=()=>t(false));
+addEventListener('keydown',e=>{if(e.key==='Escape'&&m.classList.contains('active'))t(false)})})();
+/* reveal */
+(function(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active')}),{threshold:.1});$$('.reveal').forEach(el=>io.observe(el))})();
+/* filtro */
+(function(){const bs=$$('.filter-btn'),it=$$('#portfolioGrid .portfolio-item');
+bs.forEach(b=>b.onclick=()=>{const f=b.dataset.filter;bs.forEach(x=>x.classList.toggle('active',x===b));
+it.forEach(i=>{const s=f==='all'||i.dataset.cat===f;i.classList.toggle('hide',!s);if(s)i.classList.add('active')})})})();
+/* toast */
+function showToast(t,type='success'){const d=document.createElement('div');d.className='toast '+type;d.textContent=t;$('#toastContainer').appendChild(d);setTimeout(()=>d.remove(),4000)}
+/* formulário -> WhatsApp */
+(function(){const f=$('#contactForm'),ids=['name','email','subject','message'];
+f.addEventListener('submit',e=>{e.preventDefault();let ok=true;
+ids.forEach(id=>{const i=document.getElementById(id),er=document.getElementById(id+'Error'),v=i.value.trim();
+const bad=!v||(id==='email'&&!/^\S+@\S+\.\S+$/.test(v));i.classList.toggle('error',bad);er.classList.toggle('show',bad);if(bad)ok=false});
+if(!ok){showToast('Verifique os campos destacados.','error');return}
+const g=id=>document.getElementById(id).value.trim();
+const txt=encodeURIComponent(`Nome: ${g('name')}\nEmail: ${g('email')}\nAssunto: ${g('subject')}\nMensagem: ${g('message')}`);
+window.open(`${WA}?text=${txt}`,'_blank');f.reset();showToast('Mensagem preparada! Continue a conversa no WhatsApp.')})})();
+/* modal */
+(function(){const m=$('#projectModal');let last=null;
+function close(){m.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open');if(last)last.focus()}
+$$('.project-details').forEach(b=>b.onclick=()=>{last=b;const d=b.dataset;
+$('#modalImage').src=d.img;$('#modalImage').alt=d.title;$('#modalTitle').textContent=d.title;$('#modalCategory').textContent=d.category;$('#modalDescription').textContent=d.desc;$('#modalLink').href=d.link;
+m.setAttribute('aria-hidden','false');document.body.classList.add('modal-open');m.querySelector('.modal-close').focus()});
+m.querySelector('.modal-close').onclick=close;m.querySelector('.modal-backdrop').onclick=close;
+addEventListener('keydown',e=>{if(m.getAttribute('aria-hidden')!=='false')return;if(e.key==='Escape')close();
+if(e.key==='Tab'){const fs=m.querySelectorAll('a[href],button'),a=fs[0],z=fs[fs.length-1];
+if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}})})();
 </script>
 </body>
 </html>
